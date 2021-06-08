@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :submissions, only: :create
   resources :artefacts, only: [ :index, :show ] do
     resources :favorites, only: :create
+    # resources :events, only: :show
   end
 end
