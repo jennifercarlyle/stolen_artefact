@@ -1,3 +1,8 @@
 <h1>User profile page</h1>
 
 <%= @user.name %>
+
+<h3>My Collection:</h3>
+<% @favorited_artefacts.each do |artefact|%>
+  <%= artefact.name %>
+<% end %>
