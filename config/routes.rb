@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :collections, only: :show
   resources :submissions, only: :create
   resources :artefacts, only: [ :index, :show ] do
-    resources :favorites, only: :create
-    # resources :events, only: :show
+    member do
+      post 'toggle_favorite', to: "artefacts#toggle_favorite"
+    end
   end
 end

@@ -1,7 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-dark navbar-artefact" style="background-color: $black; color: $red;">
-  <%= link_to root_path, class: "navbar-brand p-3" do %>
-    <%= image_tag "logo.png" %>
-    <% end %>
+  <div class="d-flex align-items-center">
+    <%= link_to root_path, class: "navbar-brand p-3" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+
+    <div class="form-inline py-4 justify-content-left">
+      <%= form_tag artefacts_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control rounded",
+        placeholder: "Search"
+      %>
+      <%= submit_tag "Search", class: "mr-1 ml-1 btn btn-dark rounded" %>
+      <%= link_to "Clear", artefacts_path, class: "btn btn-dark rounded" %>
+      <% end %>
+    </div>
+  </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
