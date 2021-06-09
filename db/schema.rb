@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_142733) do
+ActiveRecord::Schema.define(version: 2021_06_08_161824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_06_08_142733) do
     t.bigint "museum_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["collection_id"], name: "index_artefacts_on_collection_id"
     t.index ["museum_id"], name: "index_artefacts_on_museum_id"
   end
