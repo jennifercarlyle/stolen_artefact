@@ -8,4 +8,6 @@ class Artefact < ApplicationRecord
   validates :name, presence: true
   validates :origin_location, presence: true
   validates :current_location, presence: true
+
+  acts_as_favoritable
 end
