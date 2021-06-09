@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  bottom: 0px;
+  height: 70px;
+  margin: 0 auto;
+  padding: 20px 50px;
+  background-color: $beige;
+}
+
+.footer-links a {
+  color: $red;
+  opacity: 0.6;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
