@@ -4,7 +4,7 @@
       <%= image_tag "logo.png" %>
       <% end %>
 
-    <div class="form-inline py-4 justify-content-left">
+    <div class="form-inline py-4">
       <%= form_tag artefacts_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
