@@ -1,0 +1,10 @@
+var artefactId = '<%= @artefact.id%>'
+function toggleLikeButton(artefactId, innerHTML) {
+  let likeButton = document.querySelector(`.like-icon[data-id='${artefactId}']`)
+  likeButton.classList.toggle('gray');
+  likeButton.classList.toggle('red');
+  likeButton.classList.toggle('fas');
+  likeButton.classList.toggle('far');
+  console.log('clicked');
+}
+toggleLikeButton(artefactId);
