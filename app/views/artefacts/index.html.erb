@@ -4,29 +4,22 @@
   </div>
 </div>
 
-<div class="form-inline py-4 d-flex justify-content-center">
-  <%= form_tag artefacts_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control rounded",
-    placeholder: "Search"
-  %>
-  <%= submit_tag "Search", class: "mr-1 ml-1 btn btn-dark rounded" %>
-  <%= link_to "Clear", artefacts_path, class: "btn btn-dark rounded" %>
-  <% end %>
-</div>
-
 <div class="container">
 
-  <h2>Artefacts</h2>
+  <h2 class="pt-4 pb-2">Artefacts</h2>
   <div class="cards-artefacts">
     <% @artefacts.first(6).each do |artefact| %>
       <div class="card-artefact">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-artefact-infos">
           <h2><%= artefact.name %></h2>
           <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
           <p><%= "Current Location: #{artefact.current_location}" %></p>
+          <% if current_user.favorited?(artefact) %>
+            <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+          <% else %>
+            <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+          <% end %>
         </div>
       </div>
     <% end %>
@@ -34,7 +27,7 @@
 
   <br>
 
-  <h2>Collections</h2>
+  <h2 class="pt-4 pb-2">Collections</h2>
   <div class="cards-collections">
     <% @collections.first(3).each do |collection| %>
       <div class="card-artefact">
@@ -49,7 +42,7 @@
 
   <br>
 
-  <h2>Museums</h2>
+  <h2 class="pt-4 pb-2">Museums</h2>
   <div class="cards-museums">
     <% @museums.first(3).each do |museum| %>
       <div class="card-artefact">
