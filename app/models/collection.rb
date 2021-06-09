@@ -5,8 +5,5 @@ class Collection < ApplicationRecord
   validates :period, presence: true
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_location,
-    against: [ :name, :location ],
-    using: {
-      tsearch: { prefix: true }
+  multisearchable against: [ :name, :period ]
 end
