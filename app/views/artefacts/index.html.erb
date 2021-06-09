@@ -1,5 +1,52 @@
-<h1>Artefact Index</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1544011431-abf089b738b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
+  <div class="container">
+    <h1>Explore Stolen Artefacts</h1>
+  </div>
+</div>
 
-<% @artefacts.each do |artefact| %>
-  <p><%= artefact.name %></p>
-<% end %>
+<div class="container">
+
+  <h2>Artefacts</h2>
+  <div class="cards-artefacts">
+    <% @artefacts.first(6).each do |artefact| %>
+      <div class="card-artefact">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-artefact-infos">
+          <h2><%= artefact.name %></h2>
+          <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
+          <p><%= "Current Location: #{artefact.current_location}" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <h2>Collections</h2>
+  <div class="cards-collections">
+    <% @artefacts.first(3).each do |artefact| %>
+      <div class="card-artefact">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-artefact-infos">
+          <h2><%= artefact.collection.name %></h2>
+          <p><%= "Period: #{artefact.collection.period}" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <h2>Museums</h2>
+  <div class="cards-museums">
+    <% @artefacts.first(3).each do |artefact| %>
+      <div class="card-artefact">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-artefact-infos">
+          <h2><%= artefact.museum.name %></h2>
+          <p><%= "Location: #{artefact.museum.location}" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
