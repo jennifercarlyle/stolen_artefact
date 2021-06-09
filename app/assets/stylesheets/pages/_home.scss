@@ -1,1 +1,40 @@
-// Specific CSS for your home-page
+// // Specific CSS for your home-page
+// .text-pop1 {
+//   -webkit-animation: text-pop-up-bottom 0.1s linear 1s both;
+//           animation: text-pop-up-bottom 0.1s linear 1s both;
+// }
+
+@for $i from 1 through 40 {
+  [class="text-pop#{$i}"] {
+  -webkit-animation: text-pop-up-bottom 0.1s linear #{$i/20}s both;
+          animation: text-pop-up-bottom 0.1s linear #{$i/20}s both;
+          display: inline-block;
+  }
+}
+
+@-webkit-keyframes text-pop-up-bottom {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+     visibility: visible;
+  }
+}
+
+@keyframes text-pop-up-bottom {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+     visibility: visible;
+  }
+}
+
+.letter-space {
+  width: 1rem;
+}
+
+h1 {
+  font-size: 60px;
+  color: $red;
+}

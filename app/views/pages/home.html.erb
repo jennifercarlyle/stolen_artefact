@@ -1,3 +1,13 @@
 <div class="navbar-artefact"></div>
-<h1>Pages#home</h1>
-<p>Our home page</p>
+<span><% "I'M A/STOLEN ARTEFACT/GET ME/OUT OF/HERE".split("").each_with_index do |letter, i| %>
+  <% if letter == "/" %>
+    <br>
+  <% elsif letter == " " %>
+    <span class="d-inline-block letter-space"></span>
+  <% else  %>
+    <h1 class="text-pop<%=i+1%>"><%= letter %></h1>
+  <% end %>
+<% end %>
+</span>
+
+
