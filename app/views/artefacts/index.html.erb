@@ -7,12 +7,14 @@
 <div class="container">
 
   <h2 class="pt-4 pb-2">Artefacts</h2>
-  <div class="cards-artefacts">
+  <div class="cards-artefacts" >
     <% @artefacts.first(6).each do |artefact| %>
       <div class="card-artefact">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-artefact-infos">
+     <%= link_to(artefact_path(artefact), class: "link-to-text, boxhead") do %>
           <h2><%= artefact.name %></h2>
+      <% end %>
           <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
           <p><%= "Current Location: #{artefact.current_location}" %></p>
           <% if current_user.favorited?(artefact) %>
@@ -24,6 +26,7 @@
       </div>
     <% end %>
   </div>
+
 
   <br>
 
