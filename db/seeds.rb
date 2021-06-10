@@ -60,5 +60,5 @@ origin_location: "Amarna", current_location: "Neues Museum, Berlin",
 context: "Sculpture",
 made_by: "Thutmose", material: "limestone, gypsum, crystal, wax",
 registration_num: "ÄM 21300", museum_id: neues_museum.id, collection_id: amarna.id)
-
 puts "created artefacts"
+
