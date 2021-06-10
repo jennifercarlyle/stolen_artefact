@@ -1,0 +1,42 @@
+.collection-title {
+  text-align: center;
+  color: $red;
+  padding: 30px 0px;
+  h1 {
+  font-size: 60px;
+  font-weight: bold;
+  }
+}
+
+.collection-map {
+  width: 100%;
+}
+
+.banner-collection {
+  margin-bottom: 16px;
+  height: 600px;
+}
+
+.collection-context {
+  padding: 8px;
+  margin: 0px 170px;
+  h2 {
+    font-size: 32px;
+    // font-weight: bold;
+    color: $red;
+    padding-bottom: 12px;
+    padding-top: 8px;
+  }
+  p {
+  font-size: 18px;
+  color: $black;
+  padding-bottom: 42px;
+  }
+}
+
+.collection-renowned-works {
+  padding-top: 80px;
+  text-align: center;
+  color: $red;
+  font-size: 32px;
+}
