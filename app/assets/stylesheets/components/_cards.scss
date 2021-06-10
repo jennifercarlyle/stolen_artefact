@@ -143,3 +143,12 @@
   color: $gray;
 }
 
+
+.link-to-text {
+  color: $black!important;
+  text-decoration: none!important;
+  font-weight: bold;
+}
+ .link-to-text:hover {
+   color: $gray!important;
+ }
