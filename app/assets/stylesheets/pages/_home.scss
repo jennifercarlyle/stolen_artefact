@@ -1,4 +1,69 @@
 // Specific CSS for your home-page
 .page-height {
   min-height: calc(100vh-70px)px;
+// // Specific CSS for your home-page
+// .text-pop1 {
+//   -webkit-animation: text-pop-up-bottom 0.1s linear 1s both;
+//           animation: text-pop-up-bottom 0.1s linear 1s both;
+// }
+
+@for $i from 1 through 40 {
+  [class="text-pop#{$i}"] {
+  -webkit-animation: text-pop-up-bottom 0.1s linear #{$i/20}s both;
+          animation: text-pop-up-bottom 0.1s linear #{$i/20}s both;
+          display: inline-block;
+  }
+}
+
+@-webkit-keyframes text-pop-up-bottom {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+     visibility: visible;
+  }
+}
+
+@keyframes text-pop-up-bottom {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+     visibility: visible;
+  }
+}
+
+.letter-space {
+  width: 2.0rem;
+}
+
+.home-title {
+  margin-bottom: 40px;
+  h1 {
+    font-size: 110px;
+    font-weight: bold;
+  }
+}
+
+.container-home {
+  padding: 60px 160px;
+  margin-bottom: 20px;
+  h2 {
+    font-size: 24px;
+    color: $red;
+  }
+}
+
+.home-banner {
+  background-color: $black;
+  color: $red;
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
