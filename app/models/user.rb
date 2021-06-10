@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :submissions
   has_many :favorites
+  has_one_attached :photo
 
   acts_as_favoritor
 end
