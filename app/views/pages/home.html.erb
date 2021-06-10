@@ -1,13 +1,31 @@
 <div class="navbar-artefact"></div>
-<span><% "I'M A/STOLEN ARTEFACT/GET ME/OUT OF/HERE".split("").each_with_index do |letter, i| %>
-  <% if letter == "/" %>
-    <br>
-  <% elsif letter == " " %>
-    <span class="d-inline-block letter-space"></span>
-  <% else  %>
-    <h1 class="text-pop<%=i+1%>"><%= letter %></h1>
+<div class="home-banner">
+  <span class="home-title"><% "I'M A STOLEN ARTEFACT/GET ME OUT OF HERE".split("").each_with_index do |letter, i| %>
+    <% if letter == "/" %>
+      <br>
+    <% elsif letter == " " %>
+      <span class="d-inline-block letter-space"></span>
+    <% else  %>
+      <h1 class="text-pop<%=i+1%>"><%= letter %></h1>
+    <% end %>
   <% end %>
-<% end %>
-</span>
+  </span>
+</div>
 
+<div class="container-home">
+  <h2 class="pt-4 pb-2">Search by Category</h2>
+    <div class="cards-home mb-8">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        Collections
+      </div>
 
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+        Artefacts
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+        Museums
+      </div>
+    </div>
+  </div>
+</div>
