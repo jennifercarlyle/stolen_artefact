@@ -24,11 +24,11 @@ pushkin = Museum.create!(name: "Pushkin State Museum of Fine Arts", location: "M
 puts "created museums"
 
 puts "creating collections"
-benin = Collection.create!(name: "Benin Bronzes", period: "Medieval")
-parthenon = Collection.create!(name: "The Parthenon Sculptures", period: "5th century B.C.E.")
-moai = Collection.create!(name: "Moai", period: "1000 C.E.")
-amarna = Collection.create!(name: "Amarna", period: "1345 B.C.E.")
-maqdala = Collection.create!(name: "Maqdala", period: "1855-1868")
+benin = Collection.create!(name: "Benin Bronzes", period: "Medieval", origin_location: "Benin City, Nigeria")
+parthenon = Collection.create!(name: "The Parthenon Sculptures", period: "5th century B.C.E.", origin_location: "Athens, Greece")
+moai = Collection.create!(name: "Moai", period: "1000 C.E.", origin_location: "Easter Island, Chile")
+amarna = Collection.create!(name: "Amarna", period: "1345 B.C.E.", origin_location: "amarna, egypt")
+maqdala = Collection.create!(name: "Maqdala", period: "1855-1868", origin_location: "Amba Mariam, Ethiopia")
 puts "created collections"
 
 
