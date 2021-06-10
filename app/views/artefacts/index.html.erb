@@ -12,9 +12,9 @@
       <div class="card-artefact">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-artefact-infos">
-     <%= link_to(artefact_path(artefact), class: "link-to-text, boxhead") do %>
+         <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
           <h2><%= artefact.name %></h2>
-      <% end %>
+          <% end %>
           <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
           <p><%= "Current Location: #{artefact.current_location}" %></p>
           <% if current_user.favorited?(artefact) %>
@@ -36,7 +36,9 @@
       <div class="card-artefact">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-artefact-infos">
+          <%= link_to(collection_path(collection), class: "link-to-text :hover") do %>
           <h2><%= collection.name %></h2>
+          <% end %>
           <p><%= "Period: #{collection.period}" %></p>
         </div>
       </div>
@@ -51,7 +53,9 @@
       <div class="card-artefact">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-artefact-infos">
+          <%= link_to(museum_path(museum), class: "link-to-text :hover") do %>
           <h2><%= museum.name %></h2>
+          <% end %>
           <p><%= "Location: #{museum.location}" %></p>
         </div>
       </div>
