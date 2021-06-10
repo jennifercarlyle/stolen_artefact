@@ -11,7 +11,9 @@ url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/back
   <h2>What are they?</h2>
   <p>The 'Benin Bronzes' (made of brass and bronze) are a group of sculptures which include elaborately decorated cast plaques, commemorative heads, animal and human figures, items of royal regalia, and personal ornaments. They were created from at least the 16th century onwards in the West African Kingdom of Benin, by specialist guilds working for the royal court of the Oba (king) in Benin City.
   <br>
+  <br>
   The Kingdom also supported guilds working in other materials such as ivory, leather, coral and wood, and the term 'Benin Bronzes' is sometimes used to refer to historic objects produced using these other materials. There are around 900 objects from the historic Kingdom of Benin in the British Museum's collection. Over 100 can be seen in a permanent changing display within the Museum's galleries.
+  <br>
   <br>
   Objects from Benin are also lent regularly around the world. The British Museum's collections additionally include a range of archival documentation and photographic collections relating to the Benin Bronzes and their collection history.</p>
 </div>
@@ -25,3 +27,24 @@ url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/back
 </div>
 
 <h2 class="collection-renowned-works">Renowned works from <%= @collection.name%></h2>
+
+<div class="container">
+  <h2 class="pt-4 pb-2"</h2>
+  <div class="cards-collection-artefacts">
+    <% @artefacts.first(6).each do |artefact| %>
+      <div class="card-artefact">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-artefact-infos">
+          <h2><%= artefact.name %></h2>
+          <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
+          <p><%= "Current Location: #{artefact.current_location}" %></p>
+          <% if current_user.favorited?(artefact) %>
+            <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+          <% else %>
+            <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
