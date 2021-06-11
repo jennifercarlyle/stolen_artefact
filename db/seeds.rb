@@ -81,7 +81,7 @@ puts "creating artefacts..."
 
 benin_bronze_plaque_img = URI.open('https://dmdlnu87i51n1.cloudfront.net/v1/uk/cjggp4qic5chl0123qqeq5h12/0x0:1280x901/960x960/301_mu_mb_benin_bronzes_01.jpg')
 benin_bronze_armlet_img = URI.open('https://lh3.googleusercontent.com/proxy/cyojF9jDpTDz9DoqmnMcb17aDvMhAzpEDJlIgAg7kFV4jp7oMqM19Fk0eXxC2N66ZA4aa3EeNVH44OIYSZDjKD6JjRt3dj2EUdWRxvswckwTozQ4ZA')
-benin_bronze_anklet_img = URI.open('https://i.ebayimg.com/00/s/MTA2NFgxNjAw/z/9agAAOSw6~dfEcf4/$_1.JPG')
+# benin_bronze_anklet_img = URI.open('https://i.ebayimg.com/00/s/MTA2NFgxNjAw/z/9agAAOSw6~dfEcf4/$_1.JPG')
 benin_bronze_aquamanile_img = URI.open('https://uwehistorycommunity.files.wordpress.com/2021/01/benin-carved-leopards.jpg?w=1024')
 parthenon_statue_img = URI.open('https://i2-prod.mirror.co.uk/incoming/article4751399.ece/ALTERNATES/s1227b/Parthenon-Sculptures-Elgin-Marbles.jpg')
 hoa_img = URI.open('https://news.artnet.com/app/news-upload/2018/12/GettyImages-1071030678-1024x683.jpg')
@@ -102,12 +102,12 @@ made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.312", mu
 benin_bronze_armlet.photo.attach(io: benin_bronze_armlet_img, filename: 'benin_bronze_armlet.png', content_type: 'image/png')
 benin_bronze_armlet.save!
 
-benin_bronze_anklet = Artefact.new(name: "Benin Bronze Anklet", origin_year: "16th - 19th Century",
-origin_location: "Benin City", current_location: "Neues Museum, Berlin",
-context: "Brass plaques which decorated the Oba's palace",
-made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.313", museum_id: british_museum.id, collection_id: benin.id)
-benin_bronze_anklet.photo.attach(io: benin_bronze_anklet_img, filename: 'benin_bronze_anklet.png', content_type: 'image/png')
-benin_bronze_anklet.save!
+# benin_bronze_anklet = Artefact.new(name: "Benin Bronze Anklet", origin_year: "16th - 19th Century",
+# origin_location: "Benin City", current_location: "Neues Museum, Berlin",
+# context: "Brass plaques which decorated the Oba's palace",
+# made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.313", museum_id: british_museum.id, collection_id: benin.id)
+# benin_bronze_anklet.photo.attach(io: benin_bronze_anklet_img, filename: 'benin_bronze_anklet.png', content_type: 'image/png')
+# benin_bronze_anklet.save!
 
 benin_bronze_aquamanile = Artefact.new(name: "Benin Bronze Aquamanile", origin_year: "17th - 18th Century",
 origin_location: "Benin City", current_location: "Pushkin museum, Moscow",
