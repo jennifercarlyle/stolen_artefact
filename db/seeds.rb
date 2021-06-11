@@ -79,18 +79,42 @@ puts "created collections"
 
 puts "creating artefacts..."
 
-benin_bronze_img = URI.open('https://dmdlnu87i51n1.cloudfront.net/v1/uk/cjggp4qic5chl0123qqeq5h12/0x0:1280x901/960x960/301_mu_mb_benin_bronzes_01.jpg')
+benin_bronze_plaque_img = URI.open('https://dmdlnu87i51n1.cloudfront.net/v1/uk/cjggp4qic5chl0123qqeq5h12/0x0:1280x901/960x960/301_mu_mb_benin_bronzes_01.jpg')
+benin_bronze_armlet_img = URI.open('https://lh3.googleusercontent.com/proxy/cyojF9jDpTDz9DoqmnMcb17aDvMhAzpEDJlIgAg7kFV4jp7oMqM19Fk0eXxC2N66ZA4aa3EeNVH44OIYSZDjKD6JjRt3dj2EUdWRxvswckwTozQ4ZA')
+# benin_bronze_anklet_img = URI.open('https://i.ebayimg.com/00/s/MTA2NFgxNjAw/z/9agAAOSw6~dfEcf4/$_1.JPG')
+benin_bronze_aquamanile_img = URI.open('https://uwehistorycommunity.files.wordpress.com/2021/01/benin-carved-leopards.jpg?w=1024')
 parthenon_statue_img = URI.open('https://i2-prod.mirror.co.uk/incoming/article4751399.ece/ALTERNATES/s1227b/Parthenon-Sculptures-Elgin-Marbles.jpg')
 hoa_img = URI.open('https://news.artnet.com/app/news-upload/2018/12/GettyImages-1071030678-1024x683.jpg')
 crown_img = URI.open('https://i.guim.co.uk/img/media/43945187e5ff4b9a211d0496069ca9c2bf7d162f/37_0_1125_675/master/1125.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=a0cdd2a8567fc4bc186de9d1df6b54b9')
 queen_img = URI.open('https://www.bigissuenorth.com/wp-content/uploads/2018/01/Nefertiti-bust_bigissuenorth.jpg')
 
-benin_bronze = Artefact.new(name: "Benin Bronze Plaque", origin_year: "16th - 17th Century",
+benin_bronze_plaque = Artefact.new(name: "Benin Bronze Plaque", origin_year: "16th - 17th Century",
 origin_location: "Benin City", current_location: "British Museum, London",
 context: "Brass plaques which decorated the Oba's palace",
 made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.31", museum_id: british_museum.id, collection_id: benin.id)
-benin_bronze.photo.attach(io: benin_bronze_img, filename: 'benin_bronze.png', content_type: 'image/png')
-benin_bronze.save!
+benin_bronze_plaque.photo.attach(io: benin_bronze_plaque_img, filename: 'benin_bronze_plaque.png', content_type: 'image/png')
+benin_bronze_plaque.save!
+
+benin_bronze_armlet = Artefact.new(name: "Benin Bronze Armlet", origin_year: "16th - 17th Century",
+origin_location: "Benin City", current_location: "Metropolitan Museum, New York",
+context: "Brass plaques which decorated the Oba's palace",
+made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.312", museum_id: british_museum.id, collection_id: benin.id)
+benin_bronze_armlet.photo.attach(io: benin_bronze_armlet_img, filename: 'benin_bronze_armlet.png', content_type: 'image/png')
+benin_bronze_armlet.save!
+
+# benin_bronze_anklet = Artefact.new(name: "Benin Bronze Anklet", origin_year: "16th - 19th Century",
+# origin_location: "Benin City", current_location: "Neues Museum, Berlin",
+# context: "Brass plaques which decorated the Oba's palace",
+# made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.313", museum_id: british_museum.id, collection_id: benin.id)
+# benin_bronze_anklet.photo.attach(io: benin_bronze_anklet_img, filename: 'benin_bronze_anklet.png', content_type: 'image/png')
+# benin_bronze_anklet.save!
+
+benin_bronze_aquamanile = Artefact.new(name: "Benin Bronze Aquamanile", origin_year: "17th - 18th Century",
+origin_location: "Benin City", current_location: "Pushkin museum, Moscow",
+context: "Brass plaques which decorated the Oba's palace",
+made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.314", museum_id: british_museum.id, collection_id: benin.id)
+benin_bronze_aquamanile.photo.attach(io: benin_bronze_aquamanile_img, filename: 'benin_bronze_aquamanile.png', content_type: 'image/png')
+benin_bronze_aquamanile.save!
 
 parthenon_statue = Artefact.new(name: "Statue from Parthenon Sculptures", origin_year:"438 B.C.E. - 432 B.C.E.",
 origin_location: "Athens", current_location: "British Museum, London",
