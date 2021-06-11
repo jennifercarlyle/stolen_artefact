@@ -4,6 +4,7 @@ class Artefact < ApplicationRecord
   has_many :events
   has_many :favorites
   has_many :users, through: :favorites
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :origin_location, presence: true
