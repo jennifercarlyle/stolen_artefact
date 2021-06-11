@@ -47,6 +47,15 @@
   padding: 16px;
 }
 
+.cards-collection-artefacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+  padding-bottom: 32px;
+  margin-bottom: 24px;
+}
+
 .card-like {
   position: relative;
     top: -70px;
@@ -84,7 +93,6 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
 
 .cards-home {
   display: grid;
@@ -135,3 +143,12 @@
   color: $gray;
 }
 
+
+.link-to-text {
+  color: $black!important;
+  text-decoration: none!important;
+  font-weight: bold;
+}
+ .link-to-text:hover {
+   color: $gray!important;
+ }
