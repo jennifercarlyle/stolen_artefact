@@ -10,5 +10,6 @@ class Collection < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_origin_location?
 
   include PgSearch::Model
-  multisearchable against: [ :name, :period ]
+  multisearchable against: [ :name, :period ],
+                  :using => {:tsearch => {:prefix => true}
 end
