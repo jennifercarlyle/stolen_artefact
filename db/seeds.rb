@@ -8,6 +8,7 @@
 require "open-uri"
 
 puts "cleaning database..."
+Event.destroy_all
 Artefact.destroy_all
 Museum.destroy_all
 Collection.destroy_all
@@ -84,23 +85,23 @@ hoa_img = URI.open('https://news.artnet.com/app/news-upload/2018/12/GettyImages-
 crown_img = URI.open('https://i.guim.co.uk/img/media/43945187e5ff4b9a211d0496069ca9c2bf7d162f/37_0_1125_675/master/1125.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=a0cdd2a8567fc4bc186de9d1df6b54b9')
 queen_img = URI.open('https://www.bigissuenorth.com/wp-content/uploads/2018/01/Nefertiti-bust_bigissuenorth.jpg')
 
-benin_bronze = Artefact.new(name: "Benin Bronze Plaque", origin_year: "16thC - 17thC",
+benin_bronze = Artefact.new(name: "Benin Bronze Plaque", origin_year: "16th - 17th Century",
 origin_location: "Benin City", current_location: "British Museum, London",
-context: "Brass plaques which decorated the Oba's palace.",
+context: "Brass plaques which decorated the Oba's palace",
 made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.31", museum_id: british_museum.id, collection_id: benin.id)
 benin_bronze.photo.attach(io: benin_bronze_img, filename: 'benin_bronze.png', content_type: 'image/png')
 benin_bronze.save!
 
-parthenon_statue = Artefact.new(name: "Statue from Parthenon Sculptures", origin_year:"438 BCE-432 BCE",
+parthenon_statue = Artefact.new(name: "Statue from Parthenon Sculptures", origin_year:"438 B.C.E. - 432 B.C.E.",
 origin_location: "Athens", current_location: "British Museum, London",
-context: "Marble statue from East Pediments of the Parthenon.",
+context: "Marble statue from East Pediments of the Parthenon",
 made_by: "Pheidias", material: "marble", registration_num: "1816,0610.98", museum_id: british_museum.id, collection_id: parthenon.id)
 parthenon_statue.photo.attach(io: parthenon_statue_img, filename: 'parthenon_statue.png', content_type: 'image/png')
 parthenon_statue.save!
 
 hoa = Artefact.new(name: "Hoa Hakananai'a", origin_year:"1000-1200",
 origin_location: "Easter Island: Rano Kao", current_location: "British Museum, London",
-context: "Statue which was originally placed on sacred site of Orongo.",
+context: "Statue which was originally placed on sacred site of Orongo",
 made_by: "Rapanui", material: "basalt, coral, stone",
 registration_num: "Oc1869,1005.1", museum_id: british_museum.id, collection_id: moai.id)
 hoa.photo.attach(io: hoa_img, filename: 'hoa.png', content_type: 'image/png')
@@ -123,3 +124,55 @@ queen.photo.attach(io: queen_img, filename: 'queen.png', content_type: 'image/pn
 queen.save!
 
 puts "created artefacts"
+
+artefact_array = Artefact.all
+puts "creating events for Benin Plaque"
+event_benin_1 = Event.new(date: "11th Century C.E.", description: "The Kingdom of Benin is formed in West Africa, in what is now southern Nigeria.")
+event_benin_1.photo.attach(io: File.open('app/assets/images/drawing_benin_city.jpeg'), filename: 'drawing_benin_city.jpeg', content_type: 'image/jpeg')
+event_benin_1.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_1.save!
+
+event_benin_2 = Event.new(date: "January 1897", description: "Acting Consul-General for the British Niger Coast Protectorate, James Robert Phillips, sets out to depose the Oba of Benin, although his reasons for doing so remain unclear. The Iyase (commander in chief of the Benin Army) responds with a surprise ambush, leaving only two British survivors. In Britain this became known as 'The Benin Massacre'.")
+event_benin_2.photo.attach(io: File.open('app/assets/images/oba-ovonramwen.jpeg'), filename: 'oba-ovonramwen.jpeg', content_type: 'image/jpeg')
+event_benin_2.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_2.save!
+
+event_benin_3 = Event.new(date: "February 1897", description: "Britain's punitive Benin Expedition of 1897. Ovonramwen, Oba (King) of Benin, is overthrown and the royal palace is plundered. The Kingdom of Benin is annexed by the British Empire.")
+event_benin_3.photo.attach(io: File.open('app/assets/images/benin_1897.jpeg'), filename: 'benin_1897.jpeg', content_type: 'image/jpeg')
+event_benin_3.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_3.save!
+
+event_benin_4 = Event.new(date: "1898", description: "The British Museum acquires three Benin plaques from the Foreign Office. ")
+event_benin_4.photo.attach(io: File.open('app/assets/images/beninplaque_115.31.png'), filename: 'beninplaque_115.31.png', content_type: 'image/png')
+event_benin_4.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_4.save!
+
+event_benin_5 = Event.new(date: "2018", description: "The governor of Edo State, Godwin Obaseki, announces that he is working with Oba Ewuare II to establish a royal museum in Benin City, to be built on vacant land adjacent to the royal palace. This would provide a building with the appropriate environmental and security standards to house international loans. The scheme is being backed by the National Commission for Museums and Monuments, which means it also has federal government support.")
+event_benin_5.photo.attach(io: File.open('app/assets/images/benin_plaque_detail_115.31.png'), filename: 'benin_plaque_detail_115.31.png', content_type: 'image/png')
+event_benin_5.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_5.save!
+
+event_benin_6 = Event.new(date: "2021", description: "To date, two of the largest collections of Benin Bronzes are located at the British Museum, at 700 pieces, and the Ethnological Museum of Berlin, at 580 pieces.")
+event_benin_6.photo.attach(io: File.open('app/assets/images/bm_benin_bronzes.jpeg'), filename: 'bm_benin_bronzes.jpeg', content_type: 'image/jpeg')
+event_benin_6.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_6.save!
+
+puts "created events for the artefact"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

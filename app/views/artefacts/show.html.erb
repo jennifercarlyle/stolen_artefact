@@ -1,4 +1,34 @@
-<h1>Artefact show page</h1>
+<div class="artefact-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-06/Benin-Bronzes-1920.jpg?itok=fK7uN_pk')">
+  <div class="text-center text-white">
+    <h3><%= @artefact.name %></h3>
+    <br>
+    <p><strong>Origin:</strong> <%= @artefact.origin_year %>, <%= @artefact.origin_location %></p>
+    <p><strong>Current Location:</strong> <%= @artefact.current_location %></p>
+    <p><strong>Context:</strong> <%= @artefact.context %></p>
+    <p><strong>Made by:</strong> <%= @artefact.made_by %></p>
+  </div>
+</div>
 
-<%= @artefact.name %>
+<div class="container position-relative">
+  <div class="top-0 left-0 d-flex position-absolute h-100 border-box">
+    <div class="w-50 border-dark border-right">
+    </div>
+    <div class="w-50">
+    </div>
+  </div>
+  <% @artefact.events.each do |event| %>
+    <div class="d-flex event-card w-100 position-relative">
+      <div class="p-5 w-50 d-flex justify-content-right">
+      <%= cl_image_tag event.photo.key, :crop=>"fill" %>
+      </div>
+      <div class="dot position-absolute">
+          <h1> • </h1>
+      </div>
+      <div class="details p-5 w-50">
+          <h3><%= event.date %></h3>
+          <p class="w-75"><%= event.description %></p>
+      </div>
+    </div>
+  <% end %>
 
+</div>

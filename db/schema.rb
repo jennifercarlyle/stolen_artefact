@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2021_06_10_152951) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.date "date"
+    t.string "date"
     t.text "description"
     t.bigint "artefact_id", null: false
     t.datetime "created_at", precision: 6, null: false
