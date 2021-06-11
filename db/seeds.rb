@@ -29,22 +29,22 @@ benin = Collection.create!(name: "Benin Bronzes", period: "Medieval", origin_loc
 parthenon = Collection.create!(name: "The Parthenon Sculptures", period: "5th century B.C.E.", origin_location: "Athens, Greece")
 moai = Collection.create!(name: "Moai", period: "1000 C.E.", origin_location: "Easter Island, Chile")
 amarna = Collection.create!(name: "Amarna", period: "1345 B.C.E.", origin_location: "amarna, egypt")
-maqdala = Collection.create!(name: "Maqdala", period: "1855-1868", origin_location: "Amba Mariam, Ethiopia")
+maqdala = Collection.create!(name: "Maqdala", period: "1855 - 1868", origin_location: "Amba Mariam, Ethiopia")
 puts "created collections"
 
 
 puts "creating artefacts"
-Artefact.create!(name: "Benin Bronze Plaque", origin_year: "16thC - 17thC",
+Artefact.create!(name: "Benin Bronze Plaque", origin_year: "16th - 17th Century",
 origin_location: "Benin City", current_location: "British Museum, London",
 context: "Brass plaques which decorated the Oba's palace.",
 made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.31", museum_id: british_museum.id, collection_id: benin.id)
 
-Artefact.create!(name: "Statue from Parthenon Sculptures", origin_year:"438 BCE-432 BCE",
+Artefact.create!(name: "Statue from Parthenon Sculptures", origin_year:"438 B.C.E. - 432 B.C.E.",
 origin_location: "Athens", current_location: "British Museum, London",
 context: "Marble statue from East Pediments of the Parthenon.",
 made_by: "Pheidias", material: "marble", registration_num: "1816,0610.98", museum_id: british_museum.id, collection_id: parthenon.id)
 
-Artefact.create!(name: "Hoa Hakananai'a", origin_year:"1000-1200",
+Artefact.create!(name: "Hoa Hakananai'a", origin_year:"1000 - 1200",
 origin_location: "Easter Island: Rano Kao", current_location: "British Museum, London",
 context: "Statue which was originally placed on sacred site of Orongo.",
 made_by: "Rapanui", material: "basalt, coral, stone",
@@ -56,7 +56,7 @@ context: "Religious",
 made_by: "Unknown", material: "gold, silver, copper",
 registration_num: "M.27-2005", museum_id: v_a.id, collection_id: maqdala.id)
 
-Artefact.create!(name: "Bust of Queen Nefertiti", origin_year:"1340 BCE",
+Artefact.create!(name: "Bust of Queen Nefertiti", origin_year:"1340 B.C.E.",
 origin_location: "Amarna", current_location: "Neues Museum, Berlin",
 context: "Sculpture",
 made_by: "Thutmose", material: "limestone, gypsum, crystal, wax",

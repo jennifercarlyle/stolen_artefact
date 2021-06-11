@@ -1,6 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-06/Benin-Bronzes-1920.jpg?itok=fK7uN_pk')">
+<div class="artefact-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-06/Benin-Bronzes-1920.jpg?itok=fK7uN_pk')">
   <div class="text-center text-white">
-    <h1><%= @artefact.name %></h1>
+    <h3><%= @artefact.name %></h3>
     <br>
     <p><strong>Origin:</strong> <%= @artefact.origin_year %>, <%= @artefact.origin_location %></p>
     <p><strong>Current Location:</strong> <%= @artefact.current_location %></p>
@@ -9,25 +9,26 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="d-flex mt-5">
-    <div class="mr-2 flex-column flex-fill">
-      <% @artefact.events.each do |event| %>
-        <%= cl_image_tag event.photo.key, :height=>500, :crop=>"fill" %>
-      <% end %>
+<div class="container position-relative">
+  <div class="top-0 left-0 d-flex position-absolute h-100 border-box">
+    <div class="w-50 border-dark border-right">
     </div>
-
-    <div class="mr-2 flex-column">
-      <% @artefact.events.each do |event| %>
-        <h3> • </h3>
-      <% end %>
-    </div>
-
-    <div class="ml-2 flex-column">
-      <% @artefact.events.each do |event| %>
-        <h3> <%= event.date %></h3>
-        <p><%= event.description %></p>
-      <% end %>
+    <div class="w-50">
     </div>
   </div>
+  <% @artefact.events.each do |event| %>
+    <div class="d-flex event-card w-100 position-relative">
+      <div class="p-5 w-50 d-flex justify-content-right">
+      <%= cl_image_tag event.photo.key, :crop=>"fill" %>
+      </div>
+      <div class="dot position-absolute">
+          <h1> • </h1>
+      </div>
+      <div class="details p-5 w-50">
+          <h3><%= event.date %></h3>
+          <p class="w-75"><%= event.description %></p>
+      </div>
+    </div>
+  <% end %>
+
 </div>
