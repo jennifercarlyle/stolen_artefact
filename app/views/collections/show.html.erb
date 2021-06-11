@@ -33,7 +33,7 @@ url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/back
   <div class="cards-collection-artefacts">
     <% @artefacts.first(6).each do |artefact| %>
       <div class="card-artefact">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%= cl_image_tag artefact.photo.key %>
         <div class="card-artefact-infos">
           <h2><%= artefact.name %></h2>
           <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
