@@ -23,7 +23,16 @@
     <% end %>
   </div>
 
-  <div class="form-login">
-
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-4">
+        <div class="form-login">
+          <%= simple_form_for(@submission) do |f| %>
+            <%= f.input :description %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
