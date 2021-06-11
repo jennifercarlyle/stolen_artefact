@@ -1,4 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1584652868574-0669f4292976?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);"></div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+url(https://images.unsplash.com/photo-1578163678052-eef169544f75?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
+</div>
 
 <div class="container">
 
@@ -26,9 +28,9 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-sm-4">
-        <div class="form-login">
+        <div class="form-submission">
           <h4>Contact Us</h4>
-          <p><i>Do you have more information about any of the artefacts on our site? Or is there another artefact we shoul add? Let us know and our team of experts will look into it!</i></p>
+          <p><i>Do you have more information about any of the artefacts on our site? Or is there another artefact we should add? Let us know and our team of experts will look into it!</i></p>
           <%= simple_form_for(@submission) do |f| %>
             <%= f.input :description %>
             <%= f.button :submit, "Submit", class: "btn btn-primary" %>
