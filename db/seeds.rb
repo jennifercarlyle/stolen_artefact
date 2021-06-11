@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "cleaning database..."
+Event.destroy_all
 Artefact.destroy_all
 Museum.destroy_all
 Collection.destroy_all
@@ -61,4 +62,55 @@ context: "Sculpture",
 made_by: "Thutmose", material: "limestone, gypsum, crystal, wax",
 registration_num: "ÄM 21300", museum_id: neues_museum.id, collection_id: amarna.id)
 puts "created artefacts"
+
+
+artefact_array = Artefact.all
+puts "creating events for Benin Plaque"
+event_benin_1 = Event.new(date: "11th century C.E.", description: "The Kingdom of Benin is formed in West Africa, in what is now southern Nigeria.")
+event_benin_1.photo.attach(io: File.open('app/assets/images/drawing_benin_city.jpeg'), filename: 'drawing_benin_city.jpeg', content_type: 'image/jpeg')
+event_benin_1.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_1.save!
+
+event_benin_2 = Event.new(date: "January 1897", description: "Acting Consul-General for the British Niger Coast Protectorate, James Robert Phillips, sets out to depose the Oba of Benin, although his reasons for doing so remain unclear. The Iyase (commander in chief of the Benin Army) responds with a surprise ambush, leaving only two British survivors. In Britain this became known as 'The Benin Massacre'.")
+event_benin_2.photo.attach(io: File.open('app/assets/images/oba-ovonramwen.jpeg'), filename: 'oba-ovonramwen.jpeg', content_type: 'image/jpeg')
+event_benin_2.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_2.save!
+
+event_benin_3 = Event.new(date: "February 1897", description: "Britain's punitive Benin Expedition of 1897. Ovonramwen, Oba (King) of Benin, is overthrown and the royal palace is plundered. The Kingdom of Benin is annexed by the British Empire.")
+event_benin_3.photo.attach(io: File.open('app/assets/images/benin_1897.jpeg'), filename: 'benin_1897.jpeg', content_type: 'image/jpeg')
+event_benin_3.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_3.save!
+
+event_benin_4 = Event.new(date: "1898", description: "The British Museum acquires three Benin plaques from the Foreign Office. ")
+event_benin_4.photo.attach(io: File.open('app/assets/images/beninplaque_115.31.png'), filename: 'beninplaque_115.31.png', content_type: 'image/png')
+event_benin_4.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_4.save!
+
+event_benin_5 = Event.new(date: "2018", description: "The governor of Edo State, Godwin Obaseki, announces that he is working with Oba Ewuare II to establish a royal museum in Benin City, to be built on vacant land adjacent to the royal palace. This would provide a building with the appropriate environmental and security standards to house international loans. The scheme is being backed by the National Commission for Museums and Monuments, which means it also has federal government support.")
+event_benin_5.photo.attach(io: File.open('app/assets/images/benin_plaque_detail_115.31.png'), filename: 'benin_plaque_detail_115.31.png', content_type: 'image/png')
+event_benin_5.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_5.save!
+
+event_benin_6 = Event.new(date: "2021", description: "To date, two of the largest collections of Benin Bronzes are located at the British Museum, at 700 pieces, and the Ethnological Museum of Berlin, at 580 pieces.")
+event_benin_6.photo.attach(io: File.open('app/assets/images/bm_benin_bronzes.jpeg'), filename: 'bm_benin_bronzes.jpeg', content_type: 'image/jpeg')
+event_benin_6.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
+event_benin_6.save!
+puts "created events for the artefact"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
