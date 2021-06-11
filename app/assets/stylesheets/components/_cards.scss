@@ -151,4 +151,13 @@
 }
  .link-to-text:hover {
    color: $gray!important;
- }
+}
+
+.link-to-text-home {
+  color: $coral!important;
+  text-decoration: none!important;
+  font-weight: bold;
+}
+ .link-to-text-home:hover {
+   color: $red!important;
+}

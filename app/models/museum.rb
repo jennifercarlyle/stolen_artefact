@@ -1,5 +1,6 @@
 class Museum < ApplicationRecord
   has_many :artefacts
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :location, presence: true
