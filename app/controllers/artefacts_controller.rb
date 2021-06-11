@@ -26,7 +26,7 @@ class ArtefactsController < ApplicationController
   def toggle_favorite
     @artefact = Artefact.find_by(id: params[:id])
     current_user.favorited?(@artefact) ?
-current_user.unfavorite(@artefact) :
-current_user.favorite(@artefact)
+    current_user.unfavorite(@artefact) :
+    current_user.favorite(@artefact)
   end
 end

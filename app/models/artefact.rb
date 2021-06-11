@@ -16,5 +16,6 @@ class Artefact < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_current_location?
 
   include PgSearch::Model
-  multisearchable against: [ :name, :context, :made_by, :material ]
+  multisearchable against: [ :name, :context, :made_by, :material ],
+                  :using => {:tsearch => {:prefix => true}
 end

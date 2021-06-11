@@ -6,5 +6,6 @@ class Museum < ApplicationRecord
   validates :location, presence: true
 
   include PgSearch::Model
-  multisearchable against: [ :name, :location ]
+  multisearchable against: [ :name, :location ],
+                  :using => {:tsearch => {:prefix => true}
 end
