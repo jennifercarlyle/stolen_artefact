@@ -18,7 +18,7 @@ class CollectionsController < ApplicationController
         lat: @collection.latitude,
         lng: @collection.longitude,
         info_window: render_to_string(partial: "info_window_collection", locals: { collection: @collection }),
-        image_url:  helpers.asset_url('plaque.png')
+        image_url:  helpers.asset_url('benin_plaque_115.31.png')
       }
     end
 end

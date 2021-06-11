@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   margin: 8px;
+  position: relative;
 }
 
 .card-artefact img {
@@ -57,9 +58,9 @@
 }
 
 .card-like {
-  position: relative;
-    top: -70px;
-    right: -370px;
+  position: absolute;
+    top: 5px;
+    right: 10px;
 }
 
 .cards-general {
