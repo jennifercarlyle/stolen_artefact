@@ -10,7 +10,7 @@
   <div class="cards-artefacts" >
     <% @artefacts.first(6).each do |artefact| %>
       <div class="card-artefact">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%= cl_image_tag artefact.photo.key %>
         <div class="card-artefact-infos">
          <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
           <h2><%= artefact.name %></h2>
@@ -34,7 +34,7 @@
   <div class="cards-collections">
     <% @collections.first(3).each do |collection| %>
       <div class="card-artefact">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%= cl_image_tag collection.photo.key %>
         <div class="card-artefact-infos">
           <%= link_to(collection_path(collection), class: "link-to-text :hover") do %>
           <h2><%= collection.name %></h2>
@@ -51,7 +51,7 @@
   <div class="cards-museums">
     <% @museums.first(3).each do |museum| %>
       <div class="card-artefact">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%= cl_image_tag museum.photo.key %>
         <div class="card-artefact-infos">
           <%= link_to(museum_path(museum), class: "link-to-text :hover") do %>
           <h2><%= museum.name %></h2>
