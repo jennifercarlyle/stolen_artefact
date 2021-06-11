@@ -3,6 +3,7 @@
   background: $black;
   transition: 0.5s background-color ease;
   position: fixed;
+  z-index: 1000;
   top: 0;
   width: 100%;
 }
