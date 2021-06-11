@@ -66,7 +66,7 @@ puts "created artefacts"
 
 artefact_array = Artefact.all
 puts "creating events for Benin Plaque"
-event_benin_1 = Event.new(date: "11th century C.E.", description: "The Kingdom of Benin is formed in West Africa, in what is now southern Nigeria.")
+event_benin_1 = Event.new(date: "11th Century C.E.", description: "The Kingdom of Benin is formed in West Africa, in what is now southern Nigeria.")
 event_benin_1.photo.attach(io: File.open('app/assets/images/drawing_benin_city.jpeg'), filename: 'drawing_benin_city.jpeg', content_type: 'image/jpeg')
 event_benin_1.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
 event_benin_1.save!

@@ -10,16 +10,22 @@
 </div>
 
 <div class="container">
-  <div class="d-flex">
-    <div class="artefact-image mr-2 flex-column">
+  <div class="d-flex mt-5">
+    <div class="mr-2 flex-column flex-fill">
       <% @artefact.events.each do |event| %>
         <%= cl_image_tag event.photo.key, :height=>500, :crop=>"fill" %>
       <% end %>
     </div>
 
-    <div class="center-dot mr-2 flex-column">
+    <div class="mr-2 flex-column">
       <% @artefact.events.each do |event| %>
-        <p> • <%= event.date %></p>
+        <h3> • </h3>
+      <% end %>
+    </div>
+
+    <div class="ml-2 flex-column">
+      <% @artefact.events.each do |event| %>
+        <h3> <%= event.date %></h3>
         <p><%= event.description %></p>
       <% end %>
     </div>
