@@ -27,9 +27,11 @@
     <div class="row justify-content-center">
       <div class="col-12 col-sm-4">
         <div class="form-login">
+          <h4>Contact Us</h4>
+          <p><i>Do you have more information about any of the artefacts on our site? Or is there another artefact we shoul add? Let us know and our team of experts will look into it!</i></p>
           <%= simple_form_for(@submission) do |f| %>
             <%= f.input :description %>
-            <%= f.submit %>
+            <%= f.button :submit, "Submit", class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
