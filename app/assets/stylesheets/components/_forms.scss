@@ -33,3 +33,21 @@
     margin-bottom: 20px
   }
 }
+
+.profile-container {
+  min-height: 575px;
+}
+
+@media (min-width: 992px) {
+  .form {
+  position: relative;
+  }
+
+  .form-submission {
+    position: absolute;
+    width: 100%;
+    right: -50px;
+    top: -275px;
+  }
+}
+
