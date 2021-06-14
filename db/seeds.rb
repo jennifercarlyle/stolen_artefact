@@ -68,10 +68,10 @@ parthenon.save!
 moai = Collection.new(name: "Moai", period: "1000 C.E.", origin_location: "Easter Island, Chile")
 moai.photo.attach(io: moai_img, filename: 'moai.png', content_type: 'image/png')
 moai.save!
-amarna = Collection.new(name: "Amarna", period: "1345 B.C.E.", origin_location: "amarna, egypt")
+amarna = Collection.new(name: "Amarna", period: "1345 B.C.E.", origin_location: "Amarna, Egypt")
 amarna.photo.attach(io: amarna_img, filename: 'amarna.png', content_type: 'image/png')
 amarna.save!
-maqdala = Collection.new(name: "Maqdala", period: "1855-1868", origin_location: "Amba Mariam, Ethiopia")
+maqdala = Collection.new(name: "Maqdala", period: "1855 - 1868", origin_location: "Amba Mariam, Ethiopia")
 maqdala.photo.attach(io: maqdala_img, filename: 'maqdala.png', content_type: 'image/png')
 maqdala.save!
 
@@ -116,14 +116,14 @@ made_by: "Edo", material: "brass, iron", registration_num: "Af1898,0115.314", mu
 benin_bronze_aquamanile.photo.attach(io: benin_bronze_aquamanile_img, filename: 'benin_bronze_aquamanile.png', content_type: 'image/png')
 benin_bronze_aquamanile.save!
 
-parthenon_statue = Artefact.new(name: "Statue from Parthenon Sculptures", origin_year:"438 B.C.E. - 432 B.C.E.",
+parthenon_statue = Artefact.new(name: "Statue from Parthenon Sculptures", origin_year:"438 - 432 B.C.E.",
 origin_location: "Athens", current_location: "British Museum, London",
 context: "Marble statue from East Pediments of the Parthenon",
 made_by: "Pheidias", material: "marble", registration_num: "1816,0610.98", museum_id: british_museum.id, collection_id: parthenon.id)
 parthenon_statue.photo.attach(io: parthenon_statue_img, filename: 'parthenon_statue.png', content_type: 'image/png')
 parthenon_statue.save!
 
-hoa = Artefact.new(name: "Hoa Hakananai'a", origin_year:"1000-1200",
+hoa = Artefact.new(name: "Hoa Hakananai'a", origin_year:"1000 - 1200",
 origin_location: "Easter Island: Rano Kao", current_location: "British Museum, London",
 context: "Statue which was originally placed on sacred site of Orongo",
 made_by: "Rapanui", material: "basalt, coral, stone",
@@ -139,7 +139,7 @@ registration_num: "M.27-2005", museum_id: v_a.id, collection_id: maqdala.id)
 crown.photo.attach(io: crown_img, filename: 'crown.png', content_type: 'image/png')
 crown.save!
 
-queen = Artefact.new(name: "Bust of Queen Nefertiti", origin_year:"1340 BCE",
+queen = Artefact.new(name: "Bust of Queen Nefertiti", origin_year:"1340 B.C.E.",
 origin_location: "Amarna", current_location: "Neues Museum, Berlin",
 context: "Sculpture",
 made_by: "Thutmose", material: "limestone, gypsum, crystal, wax",
@@ -181,12 +181,41 @@ event_benin_6.photo.attach(io: File.open('app/assets/images/bm_benin_bronzes.jpe
 event_benin_6.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
 event_benin_6.save!
 
-puts "created events for the artefact"
+puts "created events for the Benin Plaque"
 
 
+artefact_array = Artefact.all
+puts "creating events for Hoa Hakananai'a"
+event_hoa_1 = Event.new(date: "1000 - 1200 C.E.", description: "No Easter Island statues have been scientifically dated, but statue making in general is said to have begun by at least 1000 C.E., and occurred mostly between 1300 and 1500 C.E. Manufacture is said to have ended by 1600 C.E., when islanders began to topple them.")
+event_hoa_1.photo.attach(io: File.open('app/assets/images/moai.jpeg'), filename: 'moai.jpeg', content_type: 'image/jpeg')
+event_hoa_1.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
+event_hoa_1.save!
 
+event_hoa_2 = Event.new(date: "November 1868", description: "Hoa Hakananai'a is taken from Orongo, Easter Island (Rapa Nui) by the crew of the British ship HMS Topaze. It is associated with the island's birdman cult. When recorded in 1868, Hoa Hakananai'a was standing erect, part buried inside a freestone ceremonial 'house' in the Orongo village at the south-western tip of the island. It faced towards an extinct volcanic crater known as Rano Kau, with its back turned to the sea. It may have been made for this location, or first erected elsewhere before being moved to where it was found. It was dug out, dragged down from Rano Kau on a sledge, and rafted out to the ship.")
+event_hoa_2.photo.attach(io: File.open('app/assets/images/hoa_onboard.jpeg'), filename: 'hoa_onboard.jpeg', content_type: 'image/jpeg')
+event_hoa_2.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
+event_hoa_2.save!
 
+event_hoa_3 = Event.new(date: "16 August 1869", description: "Hoa Hakananai'a arrives on the HMS Topaze in Plymouth, England. The Admiralty offers the statue to Queen Victoria, who proposes that it should be given to the British Museum. It was mounted in a plinth and exhibited outside the museum's front entrance, beneath the portico.")
+event_hoa_3.photo.attach(io: File.open('app/assets/images/hoa_1936.jpeg'), filename: 'hoa_1936.jpeg', content_type: 'image/jpeg')
+event_hoa_3.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
+event_hoa_3.save!
 
+event_hoa_4 = Event.new(date: "World War II - 2000", description: "During the Second World War, it was taken inside where it mostly remained until 1966. In that year it was moved to the museum's then Department of Ethnography, which had separate premises in Burlington Gardens. It returned to the British Museum's main site in 2000, when it was exhibited on a new, higher plinth in the Great Court.")
+event_hoa_4.photo.attach(io: File.open('app/assets/images/greatcourt_2020.png'), filename: 'greatcourt_2020.png', content_type: 'image/png')
+event_hoa_4.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
+event_hoa_4.save!
+
+event_hoa_5 = Event.new(date: "November 2018", description: "Laura Alarcón Rapu, the Governor of Easter Island, asked the British Museum to return the statue. The Rapa Nui people consider that the moai was taken without permission. The museum agreed to discuss a loan of the statue with representatives of the people. Keeper of the Department of Africa, Oceania and the Americas at the British Museum, Lissant Bolton, visited Easter Island in June 2019. Leonardo Pakarati has filmed a documentary Te Kuhane o te tupuna or “The spirit of the ancestors”, in which Hoa Hakananai'a is a symbol stolen from Rapa Nui, whose spirit or mana must be recovered to restore welfare to the island.")
+event_hoa_5.photo.attach(io: File.open('app/assets/images/spiritofancestors_hoa.png'), filename: 'spiritofancestors_hoa.png', content_type: 'image/png')
+event_hoa_5.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
+event_hoa_5.save!
+
+event_hoa_6 = Event.new(date: "2021", description: "Currently, the Hoa Hakananai'a sits in the Wellcome Trust Gallery at the British Museum (Room 24: Living and Dying).")
+event_hoa_6.photo.attach(io: File.open('app/assets/images/hoa_wellcome2.jpeg'), filename: 'hoa_wellcome2.jpeg', content_type: 'image/jpeg')
+event_hoa_6.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
+event_hoa_6.save!
+puts "created events for Hoa Hakananai'a"
 
 
 
