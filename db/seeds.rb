@@ -80,7 +80,7 @@ puts "created collections"
 puts "creating artefacts..."
 
 benin_bronze_plaque_img = URI.open('https://dmdlnu87i51n1.cloudfront.net/v1/uk/cjggp4qic5chl0123qqeq5h12/0x0:1280x901/960x960/301_mu_mb_benin_bronzes_01.jpg')
-benin_bronze_armlet_img = URI.open('https://lh3.googleusercontent.com/proxy/cyojF9jDpTDz9DoqmnMcb17aDvMhAzpEDJlIgAg7kFV4jp7oMqM19Fk0eXxC2N66ZA4aa3EeNVH44OIYSZDjKD6JjRt3dj2EUdWRxvswckwTozQ4ZA')
+benin_bronze_armlet_img = URI.open('https://www.bmimages.com/pix/ET/005/00575708001_P.JPG')
 # benin_bronze_anklet_img = URI.open('https://i.ebayimg.com/00/s/MTA2NFgxNjAw/z/9agAAOSw6~dfEcf4/$_1.JPG')
 benin_bronze_aquamanile_img = URI.open('https://uwehistorycommunity.files.wordpress.com/2021/01/benin-carved-leopards.jpg?w=1024')
 parthenon_statue_img = URI.open('https://i2-prod.mirror.co.uk/incoming/article4751399.ece/ALTERNATES/s1227b/Parthenon-Sculptures-Elgin-Marbles.jpg')
@@ -202,17 +202,17 @@ event_hoa_3.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
 event_hoa_3.save!
 
 event_hoa_4 = Event.new(date: "World War II - 2000", description: "During the Second World War, it was taken inside where it mostly remained until 1966. In that year it was moved to the museum's then Department of Ethnography, which had separate premises in Burlington Gardens. It returned to the British Museum's main site in 2000, when it was exhibited on a new, higher plinth in the Great Court.")
-event_hoa_4.photo.attach(io: File.open('app/assets/images/greatcourt_2020.png'), filename: 'greatcourt_2020.png', content_type: 'image/png')
+event_hoa_4.photo.attach(io: File.open('app/assets/images/greatcourt_2020.jpeg'), filename: 'greatcourt_2020.jpeg', content_type: 'image/jpeg')
 event_hoa_4.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
 event_hoa_4.save!
 
-event_hoa_5 = Event.new(date: "November 2018", description: "Laura Alarcón Rapu, the Governor of Easter Island, asked the British Museum to return the statue. The Rapa Nui people consider that the moai was taken without permission. The museum agreed to discuss a loan of the statue with representatives of the people. Keeper of the Department of Africa, Oceania and the Americas at the British Museum, Lissant Bolton, visited Easter Island in June 2019. Leonardo Pakarati has filmed a documentary Te Kuhane o te tupuna or “The spirit of the ancestors”, in which Hoa Hakananai'a is a symbol stolen from Rapa Nui, whose spirit or mana must be recovered to restore welfare to the island.")
-event_hoa_5.photo.attach(io: File.open('app/assets/images/spiritofancestors_hoa.png'), filename: 'spiritofancestors_hoa.png', content_type: 'image/png')
+event_hoa_5 = Event.new(date: "2015 - 2019", description: "In 2015, Leonardo Pakarati released a documentary titled, Te Kuhane O Te Tupuna (The Spirit of the Ancestors), in which Hoa Hakananai'a is a symbol stolen from Rapa Nui. In 2018, Laura Alarcón Rapu, the Governor of Easter Island, asked the British Museum to return the statue. The museum agreed to discuss a loan of the statue with representatives of the people. Keeper of the Department of Africa, Oceania and the Americas at the British Museum, Lissant Bolton, visited Easter Island in June 2019.")
+event_hoa_5.photo.attach(io: File.open('app/assets/images/moai_statues.jpeg'), filename: 'moai_statues.jpeg', content_type: 'image/jpeg')
 event_hoa_5.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
 event_hoa_5.save!
 
 event_hoa_6 = Event.new(date: "2021", description: "Currently, the Hoa Hakananai'a sits in the Wellcome Trust Gallery at the British Museum (Room 24: Living and Dying).")
-event_hoa_6.photo.attach(io: File.open('app/assets/images/hoa_wellcome2.jpeg'), filename: 'hoa_wellcome2.jpeg', content_type: 'image/jpeg')
+event_hoa_6.photo.attach(io: File.open('app/assets/images/hoa_wellcome.jpeg'), filename: 'hoa_wellcome.jpeg', content_type: 'image/jpeg')
 event_hoa_6.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
 event_hoa_6.save!
 puts "created events for Hoa Hakananai'a"

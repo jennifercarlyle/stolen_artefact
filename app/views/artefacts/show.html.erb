@@ -1,4 +1,4 @@
-<div class="artefact-banner" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://dmdlnu87i51n1.cloudfront.net/v1/uk/cjek8k2uy17j70183viykaxuv/0x0:1600x1067/960x960/storage.jpg')">
+<div class="artefact-banner">
   <div class="text-center text-white">
     <h3><%= @artefact.name %></h3>
     <br>
@@ -18,7 +18,7 @@
   </div>
   <% @artefact.events.each do |event| %>
     <div class="d-flex event-card w-100 position-relative">
-      <div class="p-5 w-50 d-flex justify-content-right">
+      <div class="p-5 w-50 d-flex justify-content-right featured-img">
       <%= cl_image_tag event.photo.key, :crop=>"fill" %>
       </div>
       <div class="dot position-absolute">
@@ -30,5 +30,4 @@
       </div>
     </div>
   <% end %>
-
 </div>
