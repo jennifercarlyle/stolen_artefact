@@ -2,11 +2,126 @@
 .page-height {
   min-height: calc(100vh - 172.19px);
 }
-// // Specific CSS for your home-page
-// .text-pop1 {
-//   -webkit-animation: text-pop-up-bottom 0.1s linear 1s both;
-//           animation: text-pop-up-bottom 0.1s linear 1s both;
-// }
+
+.home-images {
+  width: 100%;
+  height: 598px;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: $black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.background-home-images {
+  height: 200px;
+  width: 160px;
+  background-size: cover;
+  background-repeat: no-repeat;
+   -webkit-animation: image-pop-up 0.5s linear infinite both;
+          animation: image-pop-up 0.5s linear infinite both;
+}
+
+$images1: ["https://res.cloudinary.com/raella/image/upload/c_fill,h_200,w_160/v1623666540/artefacts/benin4_rpfyyn.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fill,h_200,w_160/v1623666540/artefacts/benin3.png_akador.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fill,h_200,w_160/v1623666540/artefacts/benin6_gafdyb.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fill,h_200,w_160/v1623666540/artefacts/benin1_ycundk.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fill,h_200,w_160/v1623666540/artefacts/benin2_jedmh7.jpg"];
+
+$images2: ["https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623681386/artefacts/benin8_fbdp3s.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623681386/artefacts/benin14_ajlyxn.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623681386/artefacts/benin15_goxvxi.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623681386/artefacts/benin9_lkegdw.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623681386/artefacts/benin13_i1z3oq.jpg"];
+
+$images3: ["https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682420/artefacts/benin20_nlz0yp.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682420/artefacts/benin21_mi3ucs.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682420/artefacts/benin18_m3z7lc.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682420/artefacts/benin19_kl8tkp.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682420/artefacts/benin17_phroex.jpg"];
+
+ $images4: ["https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682719/artefacts/benin28_hopxan.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682719/artefacts/benin22_gubiml.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682719/artefacts/benin23_zyqpqi.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682719/artefacts/benin27_awua8o.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682719/artefacts/benin26_yraghw.jpg"];
+
+ $images5: ["https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682909/artefacts/benin31_umum04.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682910/artefacts/benin30_ktug2o.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682909/artefacts/benin34_hx8e4g.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682909/artefacts/benin33_g2mcot.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623682909/artefacts/benin32_sngvqi.jpg"];
+
+ $images6: ["https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683030/artefacts/benin36_rp9ldg.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683030/artefacts/benin35_uirokk.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683029/artefacts/benin37_lqluxu.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683030/artefacts/benin39_zmc5iw.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683030/artefacts/benin38_f0ejg7.jpg"];
+
+ $images7: ["https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683726/artefacts/benin45_j45mvs.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683726/artefacts/benin42_wbmrnh.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683726/artefacts/benin43_rgq2j6.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683726/artefacts/benin41_tvncrf.jpg",
+ "https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683726/artefacts/benin44_pyrpfj.jpg"];
+
+$images8: ["https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683877/artefacts/benin47_wpmqhn.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683877/artefacts/benin49_prgvl2.webp",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683877/artefacts/benin51_lbzdc9.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683877/artefacts/benin50_tlyfxt.jpg",
+"https://res.cloudinary.com/raella/image/upload/c_fit,h_200,w_160/v1623683877/artefacts/benin48_syl6xc.jpg"];
+
+$all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $images7, $images8];
+
+
+@each $image-group in $all-images {
+  $url1: nth($image-group, 1);
+  $url2: nth($image-group, 2);
+  $url3: nth($image-group, 3);
+  $url4: nth($image-group, 4);
+  $url5: nth($image-group, 5);
+
+  @-webkit-keyframes image-loop-#{index($all-images, $image-group)} {
+   0% {
+      background-image: url($url1);
+    }
+    24.9% {
+      background-image: url($url1);
+    }
+    25% {
+      background-image: url($url2);
+    }
+    49.9% {
+      background-image: url($url2);
+    }
+    50% {
+       background-image: url($url3);
+    }
+    74.9% {
+      background-image: url($url3);
+    }
+    75% {
+      background-image: url($url4);
+    }
+    99.9% {
+      background-image: url($url4);
+    }
+    100% {
+      background-image: url($url5);
+    }
+  }
+}
+
+@for $a from 1 through 8 {
+  .background-home-image-#{$a} {
+  height: 200px;
+  width: 160px;
+  background-size: cover;
+  background-repeat: no-repeat;
+   -webkit-animation: image-loop-#{$a} 0.8s linear infinite both;
+          animation: image-loop-#{$a} 0.8s linear infinite both;
+  }
+}
+
 
 @for $i from 1 through 40 {
   [class="text-pop#{$i}"] {
@@ -73,9 +188,25 @@
 .arrow {
   position: absolute;
   font-size: 28px;
-  bottom: 26px;
+  bottom: -124px;
   right: 56px;
 }
 
+.arrow-bounce {
+  // -moz-animation: bounce 2s infinite;
+  // -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
 
