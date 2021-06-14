@@ -12,6 +12,8 @@ class SubmissionsController < ApplicationController
   private
 
   def submission_params
-    params.require(:submission).permit(:description)
+    params.require(:submission).permit(:description, :name, :origin_year,
+    :origin_location, :current_location, :context, :made_by, :material,
+    :registration_num)
   end
 end

@@ -34,4 +34,17 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-submission', {
+  title: "Thanks for reaching out",
+  text: "Our team of experts will review your submission and hopefully add your artefact to the site very soon!",
+  icon: "success"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#real-form-submission');
+    link.click();;
+  }
+});
+
 
