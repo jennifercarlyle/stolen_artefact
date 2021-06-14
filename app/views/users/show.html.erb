@@ -2,40 +2,47 @@
 url(https://images.unsplash.com/photo-1578163678052-eef169544f75?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
 </div>
 
-<div class="container">
-
+<div class="container profile-container">
   <h2><%= "#{@user.name.capitalize}'s Collection" %></h2>
-  <div class="cards-artefacts">
-    <% @user.all_favorited.each do |artefact| %>
-      <div class="card-artefact">
-        <%= cl_image_tag artefact.photo.key %>
-        <div class="card-artefact-infos">
-          <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
-          <h2><%= artefact.name %></h2>
-          <% end %>
-          <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
-          <p><%= "Current Location: #{artefact.current_location}" %></p>
-          <% if current_user.favorited?(artefact) %>
-            <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
-          <% else %>
-            <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
-          <% end %>
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <% @user.all_favorited.each do |artefact| %>
+        <div class="card-artefact">
+          <%= cl_image_tag artefact.photo.key %>
+          <div class="card-artefact-infos">
+            <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
+            <h2><%= artefact.name %></h2>
+            <% end %>
+            <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
+            <p><%= "Current Location: #{artefact.current_location}" %></p>
+            <% if current_user.favorited?(artefact) %>
+              <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+            <% else %>
+              <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-sm-4">
-        <div class="form-submission">
-          <h4>Contact Us</h4>
-          <p><i>Do you have more information about any of the artefacts on our site? Or is there another artefact we should add? Let us know and our team of experts will look into it!</i></p>
-          <%= simple_form_for(@submission) do |f| %>
-            <%= f.input :description %>
-            <%= f.button :submit, "Submit", class: "btn btn-primary" %>
-          <% end %>
-        </div>
+      <% end %>
+    </div>
+    <div class="col-12 col-lg-6 form">
+      <div class="form-submission">
+        <h4>Contact Us</h4>
+        <p><i>Do you have more information about any of the artefacts on our site? Or is there another artefact we should add? Let us know and our team of experts will look into it!</i></p>
+        <%= simple_form_for(@submission) do |f| %>
+          <%= f.input :name, label: "Artefact Name" %>
+          <%= f.input :description %>
+          <%= f.input :current_location, label: "Where did you see it?" %>
+          <div class="row">
+            <div class="col"><%= f.input :origin_location, label: "Where was it made?" %></div>
+            <div class="col"><%= f.input :origin_year, label: "When was it made?" %></div>
+          </div>
+          <div class="row">
+            <div class="col"><%= f.input :made_by, label: "Who made it?" %></div>
+            <div class="col"><%= f.input :material, label: "What materials was it made from?" %></div>
+          </div>
+          <%= f.input :context, collection: ['Domestic', 'Religious', 'Burial', 'Artistic', 'Farming', 'Military', 'Other'], label: "What was it used for?" %>
+          <%= f.button :submit, "Submit", class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
   </div>
