@@ -8,14 +8,8 @@ url(https://static01.nyt.com/images/2020/01/29/opinion/29Ehikhamenor1/merlin_165
 </div>
 
 <div class="collection-context">
-  <h2>What are they?</h2>
-  <p>The 'Benin Bronzes' (made of brass and bronze) are a group of sculptures which include elaborately decorated cast plaques, commemorative heads, animal and human figures, items of royal regalia, and personal ornaments. They were created from at least the 16th century onwards in the West African Kingdom of Benin, by specialist guilds working for the royal court of the Oba (king) in Benin City.
-  <br>
-  <br>
-  The Kingdom also supported guilds working in other materials such as ivory, leather, coral and wood, and the term 'Benin Bronzes' is sometimes used to refer to historic objects produced using these other materials. There are around 900 objects from the historic Kingdom of Benin in the British Museum's collection. Over 100 can be seen in a permanent changing display within the Museum's galleries.
-  <br>
-  <br>
-  Objects from Benin are also lent regularly around the world. The British Museum's collections additionally include a range of archival documentation and photographic collections relating to the Benin Bronzes and their collection history.</p>
+  <h3>What are they?</h3>
+  <p><%= @collection.introduction %></p>
 </div>
 
 <div class="collection-map">
@@ -25,7 +19,10 @@ url(https://static01.nyt.com/images/2020/01/29/opinion/29Ehikhamenor1/merlin_165
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-
+<div>
+  <h3>Further context</h3>
+  <p><%= @collection.context %></p>
+</div>
 <h2 class="collection-renowned-works">Renowned works from <%= @collection.name%></h2>
 
 <div class="container">
