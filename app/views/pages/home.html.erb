@@ -1,29 +1,30 @@
 <div class="navbar-artefact"></div>
 
-<div class="home-images">
-  <% 8.times do |index| %>
-    <div class="image-appear-loop-<%= index +1 %>">
-    </div>
-  <% end %>
-      <%#= image_tag "https://cloudinary.com/console/c-bb60240064d413e34ffd7648cf749c/media_library/folders/d87d907194b5fd44445faa3e662c2b54", alt: "artefacts" %>
-</div>
-
-<div class="home-banner">
-  <span class="home-title"><% "I'M A STOLEN ARTEFACT/GET ME OUT OF HERE".split("").each_with_index do |letter, i| %>
-    <% if letter == "/" %>
-      <br>
-    <% elsif letter == " " %>
-      <span class="d-inline-block letter-space"></span>
-    <% else  %>
-      <h1 class="text-pop<%=i+1%>"><%= letter %></h1>
+<div class="home-intro">
+  <div class="home-images">
+    <% 8.times do |index| %>
+      <div class="background-home-image-<%= index +1 %>">
+      </div><div class="empty"></div>
     <% end %>
-  <% end %>
-  <div class="arrow-bounce">
-    <a href="#arrow">
-      <i class="arrow fas fa-arrow-down"></i>
-    </a>
   </div>
-  </span>
+
+  <div class="home-banner">
+    <span class="home-title"><% "I'M A STOLEN ARTEFACT/GET ME OUT OF HERE".split("").each_with_index do |letter, i| %>
+      <% if letter == "/" %>
+        <br>
+      <% elsif letter == " " %>
+        <span class="d-inline-block letter-space"></span>
+      <% else  %>
+        <h1 class="text-pop<%=i+1%>"><%= letter %></h1>
+      <% end %>
+    <% end %>
+    <div class="arrow-bounce">
+      <a href="#arrow">
+        <i class="arrow fas fa-arrow-down"></i>
+      </a>
+    </div>
+    </span>
+  </div>
 </div>
 
 <a id="arrow"></a>
