@@ -29,9 +29,18 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initSweetalert('#sweet-alert-submission', {
+    title: "Thanks for reaching out",
+    text: "Our team of experts will review your submission and hopefully add your artefact to the site very soon!",
+    icon: "success"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#real-form-submission');
+      link.click();;
+    }
+  });
 })
-
-

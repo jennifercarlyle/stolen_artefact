@@ -30,3 +30,12 @@ a.nav-link {
   align-items: center;
   margin-right: 16px;
 }
+
+.link-to-text-home {
+  color: $coral!important;
+  text-decoration: none!important;
+  font-weight: bold;
+}
+ .link-to-text-home:hover {
+   color: $red!important;
+}

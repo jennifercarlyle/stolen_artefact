@@ -32,6 +32,42 @@ h3 {
   font-size: 50px;
   font-weight: bold;
 }
+
+.featured-img {
+
+  &:hover {
+    &:before {
+      bottom: 3rem;
+      left: 11rem;
+    }
+    &:after {
+      top: 3rem;
+      right: 38rem;
+    }
+  }
+
+  &:before, &:after {
+    content:'';
+    position: absolute;
+    width: 28%;
+    height: 65%;
+    z-index: -1;
+    transition: .3s ease;
+  }
+
+  &:before {
+    background: $black;
+    bottom: 2rem;
+    left: 9rem;
+  }
+
+  &:after {
+    background: $white;
+    top: 2rem;
+    right: 37rem;
+  }
+}
+
 // .flex-grow-10 {
 //   flex-grow: 10;
 // }

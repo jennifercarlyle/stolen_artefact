@@ -21,6 +21,7 @@ class ArtefactsController < ApplicationController
 
   def show
     @artefact = Artefact.find(params[:id])
+    # @collection = Collection.find(params[collection_id])
   end
 
   def toggle_favorite

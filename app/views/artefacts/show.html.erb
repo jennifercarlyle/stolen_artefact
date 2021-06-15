@@ -1,6 +1,11 @@
-<div class="artefact-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-06/Benin-Bronzes-1920.jpg?itok=fK7uN_pk')">
+<div class="artefact-banner">
   <div class="text-center text-white">
     <h3><%= @artefact.name %></h3>
+    <% if current_user.favorited?(@artefact) %>
+      <div><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
+    <% else %>
+      <div><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
+    <% end %>
     <br>
     <p><strong>Origin:</strong> <%= @artefact.origin_year %>, <%= @artefact.origin_location %></p>
     <p><strong>Current Location:</strong> <%= @artefact.current_location %></p>
@@ -18,7 +23,7 @@
   </div>
   <% @artefact.events.each do |event| %>
     <div class="d-flex event-card w-100 position-relative">
-      <div class="p-5 w-50 d-flex justify-content-right">
+      <div class="p-5 w-50 d-flex justify-content-right featured-img">
       <%= cl_image_tag event.photo.key, :crop=>"fill" %>
       </div>
       <div class="dot position-absolute">
@@ -30,5 +35,4 @@
       </div>
     </div>
   <% end %>
-
 </div>
