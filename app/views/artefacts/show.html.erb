@@ -1,16 +1,22 @@
 <div class="artefact-banner">
-  <div class="text-center text-white">
-    <h3><%= @artefact.name %></h3>
-    <% if current_user.favorited?(@artefact) %>
-      <div><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
-    <% else %>
-      <div><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
-    <% end %>
+  <div class="text-left text-white intro">
+    <div class="d-inline-flex">
+      <h3 class="mr-2 mb-2"><%= @artefact.name %></h3>
+      <% if current_user.favorited?(@artefact) %>
+        <div><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
+      <% else %>
+        <div><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
+      <% end %>
+    </div>
     <br>
-    <p><strong>Origin:</strong> <%= @artefact.origin_year %>, <%= @artefact.origin_location %></p>
-    <p><strong>Current Location:</strong> <%= @artefact.current_location %></p>
-    <p><strong>Context:</strong> <%= @artefact.context %></p>
-    <p><strong>Made by:</strong> <%= @artefact.made_by %></p>
+    <div class="mt-2 border-left border-light">
+      <div class="ml-4">
+        <p><strong>Origin:</strong> <%= @artefact.origin_year %>, <%= @artefact.origin_location %></p>
+        <p><strong>Current Location:</strong> <%= @artefact.current_location %></p>
+        <p><strong>Context:</strong> <%= @artefact.context %></p>
+        <p><strong>Made by:</strong> <%= @artefact.made_by %></p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -21,17 +27,18 @@
     <div class="w-50">
     </div>
   </div>
+
   <% @artefact.events.each do |event| %>
     <div class="d-flex event-card w-100 position-relative">
-      <div class="p-5 w-50 d-flex justify-content-right featured-img">
+      <div class="p-5 w-50 d-flex justify-content-right">
       <%= cl_image_tag event.photo.key, :crop=>"fill" %>
       </div>
       <div class="dot position-absolute">
-          <h1> • </h1>
+        <h1> • </h1>
       </div>
       <div class="details p-5 w-50">
-          <h3><%= event.date %></h3>
-          <p class="w-75"><%= event.description %></p>
+        <h3><%= event.date %></h3>
+        <p class="w-75"><%= event.description %></p>
       </div>
     </div>
   <% end %>
