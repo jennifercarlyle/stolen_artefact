@@ -11,4 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "animations/index";
+
+html {
+  scroll-behavior: smooth;
+}
 
