@@ -117,11 +117,10 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
   width: 160px;
   background-size: cover;
   background-repeat: no-repeat;
-   -webkit-animation: image-loop-#{$a} 0.8s linear infinite both;
-          animation: image-loop-#{$a} 0.8s linear infinite both;
+   -webkit-animation: image-loop-#{$a} 0.8s linear infinite both,image-appear 5s linear #{$a/2}s both;
+          animation: image-loop-#{$a} 0.8s linear infinite both, image-appear 5s linear #{$a/2}s both;
   }
 }
-
 
 @for $i from 1 through 40 {
   [class="text-pop#{$i}"] {
@@ -146,6 +145,51 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
   }
   100% {
      visibility: visible;
+  }
+}
+
+
+@-webkit-keyframes image-appear {
+//   0% {
+//     visibility: hidden;
+//   }
+//   100% {
+//      visibility: visible;
+//   }
+// }
+  0% {
+    visibility: hidden;
+  }
+  1% {
+     visibility: visible;
+  }
+  99% {
+    visibility: visible;
+  }
+  100% {
+     visibility: hidden;
+  }
+}
+
+@keyframes image-appear {
+//   0% {
+//     visibility: hidden;
+//   }
+//   100% {
+//      visibility: visible;
+//   }
+// }
+  0% {
+    visibility: hidden;
+  }
+  1% {
+     visibility: visible;
+  }
+  99% {
+    visibility: visible;
+  }
+  100% {
+     visibility: hidden;
   }
 }
 
