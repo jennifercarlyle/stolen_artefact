@@ -1,4 +1,13 @@
-<div class="museum-banner"></div>
+<!-- <div class="museum-banner"></div> -->
+
+<div class="museum-animation-container">
+  <img class="front-image" <%=cl_image_tag("https://res.cloudinary.com/raella/image/upload/v1623847707/artefacts/british_museum_xytt2n.jpg")%>
+  <span class="hover-container">
+    <span class="image-container">
+      <img class="inner-image" <%=cl_image_tag("https://res.cloudinary.com/raella/image/upload/v1623683726/artefacts/benin46_kehxnh.jpg")%>
+    </span>
+  </span>
+</div>
 
 <div class="container">
   <div class="museum-header"><h1><%= @museum.name %></h1></div>
