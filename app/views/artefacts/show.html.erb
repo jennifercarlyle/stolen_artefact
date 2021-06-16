@@ -22,6 +22,7 @@
           <p><strong>Current Location:</strong> <%= @artefact.current_location %></p>
           <p><strong>Context:</strong> <%= @artefact.context %></p>
           <p><strong>Made by:</strong> <%= @artefact.made_by %></p>
+        <button type="button" class="btn btn-outline-light btn-sm mt-2 p-2"><%= link_to "View the Collection", collection_path(@artefact.collection.id) %></button>
       </div>
     </header>
   </div>
@@ -41,4 +42,9 @@
     </div>
     <div class="h-50"></div>
   <% end %>
+  <div class="view-more mb-4 d-flex justify-content-center">
+    <button type="button" class="btn btn-dark rounded btn-outline-dark btn-sm py-3 px-5"><%= link_to "Learn more about the Collection", collection_path(@artefact.collection.id) %></button>
+  </div>
+  <!-- <button type="button" class="btn btn-dark px-3 py-2 text-light"><%= link_to "View the Collection", collection_path(@artefact.collection.id) %></button> -->
 </div>
+

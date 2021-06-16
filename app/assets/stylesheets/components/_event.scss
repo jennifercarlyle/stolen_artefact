@@ -36,7 +36,6 @@ header {
 }
 
 .parallax__layer--image {
-  z-index: -1;
   transform: translateZ(-1px) scale(1.2);
   img {
     max-height: 500px;
@@ -59,6 +58,16 @@ header {
   position: relative;
   transform-style: preserve-3d;
   height: 100vh;
+  .btn {
+    padding: 3px 5px;
+  }
+  .btn a {
+    color: white;
+  }
+  .btn :hover {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .text-card {
@@ -75,4 +84,16 @@ header {
   box-sizing: border-box;
   left: 0;
   right: 0;
+}
+
+.view-more {
+  margin: 0 auto;
+  padding: 5px 15px;
+  .btn a {
+    color: white;
+  }
+  .btn :hover {
+    text-decoration: none;
+    color: $cream;
+  }
 }
