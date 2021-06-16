@@ -167,12 +167,12 @@ event_benin_3.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").
 event_benin_3.save!
 
 event_benin_4 = Event.new(date: "1898", description: "The British Museum acquires three Benin plaques from the Foreign Office. ")
-event_benin_4.photo.attach(io: File.open('app/assets/images/beninplaque_115.31.png'), filename: 'beninplaque_115.31.png', content_type: 'image/png')
+event_benin_4.photo.attach(io: File.open('app/assets/images/beninplaque.jpeg'), filename: 'beninplaque.jpeg', content_type: 'image/jpeg')
 event_benin_4.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
 event_benin_4.save!
 
 event_benin_5 = Event.new(date: "2018", description: "The governor of Edo State, Godwin Obaseki, announces that he is working with Oba Ewuare II to establish a royal museum in Benin City, to be built on vacant land adjacent to the royal palace. This would provide a building with the appropriate environmental and security standards to house international loans. The scheme is being backed by the National Commission for Museums and Monuments, which means it also has federal government support.")
-event_benin_5.photo.attach(io: File.open('app/assets/images/benin_plaque_detail_115.31.png'), filename: 'benin_plaque_detail_115.31.png', content_type: 'image/png')
+event_benin_5.photo.attach(io: File.open('app/assets/images/beninmuseum.jpeg'), filename: 'beninmuseum.jpeg', content_type: 'image/jpeg')
 event_benin_5.artefact_id = artefact_array.find_by(name: "Benin Bronze Plaque").id
 event_benin_5.save!
 
