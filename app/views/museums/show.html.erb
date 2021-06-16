@@ -39,7 +39,7 @@
               <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
               <p><%= "Current Location: #{artefact.current_location}" %></p>
               <div class="card-icons">
-                <%= social_share_button_tag('Check out this stolen artefact!', :url => "https://stolenartefact.com/#{artefact_path(artefact)}", desc: "Check out this link to learn more about how #{artefact.name} came to be at #{artefact.current_location}.") %>
+                <%= social_share_button_tag("Find out how the #{artefact.name} came to be at the #{artefact.current_location}. #stolenartefact #decolonizemuseums", :url => "https://www.stolenartefact.com#{artefact_path(artefact)}", desc: "Check out this link to learn more about how #{artefact.name} came to be at #{artefact.current_location}.") %>
                 <% if current_user.favorited?(artefact) %>
                   <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
                 <% else %>
