@@ -15,11 +15,14 @@ url(https://images.unsplash.com/photo-1578163678052-eef169544f75?ixid=MnwxMjA3fD
             <% end %>
             <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
             <p><%= "Current Location: #{artefact.current_location}" %></p>
-            <% if current_user.favorited?(artefact) %>
-              <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
-            <% else %>
-              <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
-            <% end %>
+            <div class="card-icons">
+              <%= social_share_button_tag('Check out this stolen artefact!', :url => "https://stolenartefact.com/#{artefact_path(artefact)}", desc: "Check out this link to learn more about how #{artefact.name} came to be at #{artefact.current_location}.") %>
+              <% if current_user.favorited?(artefact) %>
+                <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+              <% else %>
+                <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
