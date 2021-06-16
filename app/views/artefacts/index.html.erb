@@ -6,66 +6,71 @@
 
 <div class="container">
 
-  <h2 class="pt-4 pb-2">Artefacts</h2>
-  <div class="cards-artefacts" >
-    <% @artefacts.first(8).each do |artefact| %>
-      <div class="card-artefact">
-        <%= cl_image_tag artefact.photo.key %>
-        <div class="card-artefact-infos">
-         <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
-          <h2><%= artefact.name %></h2>
-          <% end %>
-          <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
-          <p><%= "Current Location: #{artefact.current_location}" %></p>
-          <div class="card-icons">
-            <%= social_share_button_tag("Find out how the #{artefact.name} came to be at the #{artefact.current_location}. #stolenartefact #decolonizemuseums", :url => "https://www.stolenartefact.com#{artefact_path(artefact)}", desc: "Check out this link to learn more about how #{artefact.name} came to be at #{artefact.current_location}.") %>
-            <% if user_signed_in? %>
-              <% if current_user.favorited?(artefact) %>
-                <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
-              <% else %>
-                <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
-              <% end %>
-            <% else %>
-              <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, new_user_session_path, method: :post %></div>
+  <% if @collections.count >= 1 %>
+    <h2 class="pt-4 pb-2">Artefacts</h2>
+    <div class="cards-artefacts" >
+      <% @artefacts.first(8).each do |artefact| %>
+        <div class="card-artefact">
+          <%= cl_image_tag artefact.photo.key %>
+          <div class="card-artefact-infos">
+           <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
+            <h2><%= artefact.name %></h2>
             <% end %>
+            <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
+            <p><%= "Current Location: #{artefact.current_location}" %></p>
+            <div class="card-icons">
+              <%= social_share_button_tag("Find out how the #{artefact.name} came to be at the #{artefact.current_location}. #stolenartefact #decolonizemuseums", :url => "https://www.stolenartefact.com#{artefact_path(artefact)}", desc: "Check out this link to learn more about how #{artefact.name} came to be at #{artefact.current_location}.") %>
+              <% if user_signed_in? %>
+                <% if current_user.favorited?(artefact) %>
+                  <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+                <% else %>
+                  <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
+                <% end %>
+              <% else %>
+                <div class="card-like"><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{artefact.id}'></i>").html_safe, new_user_session_path, method: :post %></div>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-
-
-  <br>
-
-  <h2 class="pt-4 pb-2">Collections</h2>
-  <div class="cards-collections">
-    <% @collections.first(3).each do |collection| %>
-      <div class="card-artefact">
-      <%= cl_image_tag collection.photo.key %>
-        <div class="card-artefact-infos">
-          <%= link_to(collection_path(collection), class: "link-to-text :hover") do %>
-          <h2><%= collection.name %></h2>
-          <% end %>
-          <p><%= "Period: #{collection.period}" %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 
   <br>
 
-  <h2 class="pt-4 pb-2">Museums</h2>
-  <div class="cards-museums">
-    <% @museums.first(3).each do |museum| %>
-      <div class="card-artefact">
-      <%= cl_image_tag museum.photo.key %>
-        <div class="card-artefact-infos">
-          <%= link_to(museum_path(museum), class: "link-to-text :hover") do %>
-          <h2><%= museum.name %></h2>
-          <% end %>
-          <p><%= "Location: #{museum.location}" %></p>
+  <% if @collections.count >= 1 %>
+    <h2 class="pt-4 pb-2">Collections</h2>
+    <div class="cards-collections">
+      <% @collections.first(3).each do |collection| %>
+        <div class="card-artefact">
+        <%= cl_image_tag collection.photo.key %>
+          <div class="card-artefact-infos">
+            <%= link_to(collection_path(collection), class: "link-to-text :hover") do %>
+            <h2><%= collection.name %></h2>
+            <% end %>
+            <p><%= "Period: #{collection.period}" %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <br>
+
+  <% if @museums.count >= 1 %>
+    <h2 class="pt-4 pb-2">Museums</h2>
+    <div class="cards-museums">
+      <% @museums.first(3).each do |museum| %>
+        <div class="card-artefact">
+        <%= cl_image_tag museum.photo.key %>
+          <div class="card-artefact-infos">
+            <%= link_to(museum_path(museum), class: "link-to-text :hover") do %>
+            <h2><%= museum.name %></h2>
+            <% end %>
+            <p><%= "Location: #{museum.location}" %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
