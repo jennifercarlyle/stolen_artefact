@@ -1,16 +1,82 @@
-.event-card {
-  img {
-    width: 75%;
-    margin-left: auto;
+.details {
+  h3 {
+    font-weight: bold;
+    font-size: 50px;
   }
-  .dot {
-    left: 50%;
-    top: 3rem;
-    transform: translateX(-50%);
-    h1 {
-      color: $red;
-      font-size: 50px;
-    }
+}
+
+header {
+  position: relative;
+  min-height: 400px;
+  background-color: $black;
+  width: 100%;
+  transform-style: inherit;
+  z-index: -1;
+}
+
+.parallax {
+  perspective: 2px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax__layer--text {
+  transform: translateZ(0);
+  width: 700px;
+  // margin: 0 auto;
+  margin-left: 500px;
+}
+
+.parallax__layer--image {
+  transform: translateZ(-1px) scale(1.2);
+  img {
+    max-height: 500px;
+  }
+}
+
+.parallax__layer--dot {
+  transform: translateZ(0);
+  font-size: 80px;
+  font-weight: bold;
+  color: $red;
+  margin-top: -100px;
+  h3 {
+    font-size: 60px;
+    font-weight: bold;
+  }
+}
+
+.parallax__group {
+  position: relative;
+  transform-style: preserve-3d;
+  height: 100vh;
+  .btn {
+    padding: 3px 5px;
+  }
+  .btn a {
+    color: white;
+  }
+  .btn :hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.text-card {
+  padding: 50px;
+  background-color: rgba(255,255,255,0.8);
+  height: max-content;
+  h3 {
+    font-size: 50px;
+    font-weight: bold;
   }
 }
 
@@ -20,58 +86,14 @@
   right: 0;
 }
 
-
-.details {
-  h3 {
-    font-weight: bold;
-    font-size: 30px;
+.view-more {
+  margin: 0 auto;
+  padding: 5px 15px;
+  .btn a {
+    color: white;
+  }
+  .btn :hover {
+    text-decoration: none;
+    color: $cream;
   }
 }
-
-h3 {
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.featured-img {
-
-  &:hover {
-    &:before {
-      bottom: 3rem;
-      left: 11rem;
-    }
-    &:after {
-      top: 3rem;
-      right: 38rem;
-    }
-  }
-
-  &:before, &:after {
-    content:'';
-    position: absolute;
-    width: 28%;
-    height: 65%;
-    z-index: -1;
-    transition: .3s ease;
-  }
-
-  &:before {
-    background: $black;
-    bottom: 2rem;
-    left: 9rem;
-  }
-
-  &:after {
-    background: $white;
-    top: 2rem;
-    right: 37rem;
-  }
-}
-
-// .flex-grow-10 {
-//   flex-grow: 10;
-// }
-
-// .flex-grow-1 {
-//   flex-grow: 1;
-// }

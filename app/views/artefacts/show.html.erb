@@ -1,38 +1,50 @@
-<div class="artefact-banner">
-  <div class="text-center text-white">
-    <h3><%= @artefact.name %></h3>
-    <% if current_user.favorited?(@artefact) %>
-      <div><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
-    <% else %>
-      <div><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
-    <% end %>
-    <br>
-    <p><strong>Origin:</strong> <%= @artefact.origin_year %>, <%= @artefact.origin_location %></p>
-    <p><strong>Current Location:</strong> <%= @artefact.current_location %></p>
-    <p><strong>Context:</strong> <%= @artefact.context %></p>
-    <p><strong>Made by:</strong> <%= @artefact.made_by %></p>
+<div class="top-0 left-0 d-flex position-absolute h-100 border-box">
+  <div class="w-50 border-dark border-right">
+  </div>
+  <div class="w-50">
   </div>
 </div>
 
-<div class="container position-relative">
-  <div class="top-0 left-0 d-flex position-absolute h-100 border-box">
-    <div class="w-50 border-dark border-right">
-    </div>
-    <div class="w-50">
-    </div>
+<div class="parallax">
+  <div class="parallax__group">
+    <header>
+      <div class="text-center text-white">
+        <div class="details d-inline-flex mb-2 mt-5">
+          <h3 class="mr-2 mb-2"><%= @artefact.name %></h3>
+          <% if current_user.favorited?(@artefact) %>
+            <div><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
+          <% else %>
+            <div><%= link_to ("<i class='far fa-heart like-icon gray' data-id='#{@artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(@artefact), remote: true, method: :post %></div>
+          <% end %>
+        </div>
+        <br>
+          <p><strong>Origin:</strong> <%= @artefact.origin_year %>, <%= @artefact.origin_location %></p>
+          <p><strong>Current Location:</strong> <%= @artefact.current_location %></p>
+          <p><strong>Context:</strong> <%= @artefact.context %></p>
+          <p><strong>Made by:</strong> <%= @artefact.made_by %></p>
+        <button type="button" class="btn btn-outline-light btn-sm mt-2 p-2"><%= link_to "View the Collection", collection_path(@artefact.collection.id) %></button>
+      </div>
+    </header>
   </div>
+
   <% @artefact.events.each do |event| %>
-    <div class="d-flex event-card w-100 position-relative">
-      <div class="p-5 w-50 d-flex justify-content-right featured-img">
-      <%= cl_image_tag event.photo.key, :crop=>"fill" %>
+    <div class="parallax__group d-flex align-items-center">
+      <div class="parallax__layer parallax__layer--image d-flex ml-6">
+        <%= cl_image_tag event.photo.key %>
       </div>
-      <div class="dot position-absolute">
-          <h1> • </h1>
-      </div>
-      <div class="details p-5 w-50">
+      <div class="parallax__layer parallax__layer--dot d-flex justify-content-center"><h3> • </h3></div>
+      <div class="parallax__layer parallax__layer--text">
+        <div class="text-card ml-4">
           <h3><%= event.date %></h3>
-          <p class="w-75"><%= event.description %></p>
+          <p><%= event.description %></p>
+        </div>
       </div>
     </div>
+    <div class="h-50"></div>
   <% end %>
+  <div class="view-more mb-4 d-flex justify-content-center">
+    <button type="button" class="btn btn-dark rounded btn-outline-dark btn-sm py-3 px-5"><%= link_to "Learn more about the Collection", collection_path(@artefact.collection.id) %></button>
+  </div>
+  <!-- <button type="button" class="btn btn-dark px-3 py-2 text-light"><%= link_to "View the Collection", collection_path(@artefact.collection.id) %></button> -->
 </div>
+

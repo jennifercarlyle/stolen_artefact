@@ -1,16 +1,17 @@
 
 import mapboxgl from 'mapbox-gl';
-import * as turf from '@turf/turf'
+import * as turf from '@turf/turf';
+
 
 const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-  return new mapboxgl.Map({
+  const map = new mapboxgl.Map({
     container: 'map',
     // style: 'mapbox://styles/mapbox/streets-v10'
     style: 'mapbox://styles/jamesm122/ckpo67q2x026817n0wia2tz2o'
   });
+      return map
 };
-
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -28,10 +29,12 @@ const initMapbox = () => {
       animateMultiLines(map,  [[markers[markers.length -1].lng, markers[markers.length -1].lat], [marker.lng, marker.lat] ], i)
     })
     // animateMultiLines(map, [[markers[markers.length -1].lng, markers[markers.length -1].lat], [markers[0].lng, markers[0].lat]],)
+    drawLinesFromOrigin(map, markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
 };
+
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
@@ -40,7 +43,7 @@ const addMarkersToMap = (map, markers) => {
   element.className = 'marker';
   element.style.backgroundImage = `url('${marker.image_url}')`;
   element.style.backgroundSize = 'contain';
-  element.style.border = 'solid 3px coral';
+  element.style.border = '3px solid coral';
   element.style.borderRadius = '50%';
   element.style.width = '45px';
   element.style.height = '45px';
@@ -50,6 +53,7 @@ const addMarkersToMap = (map, markers) => {
       .addTo(map);
   });
 };
+
 
 const drawLinesFromOrigin = (map, markers) => {
   map.on('load', function () {
@@ -207,6 +211,5 @@ const animateMultiLines = (map, markerGroup, i) => {
   animate(animate);
 });
 }
-
 
 export { initMapbox };

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_113446) do
+ActiveRecord::Schema.define(version: 2021_06_16_103223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,12 @@ ActiveRecord::Schema.define(version: 2021_06_15_113446) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "founded"
+    t.integer "opened"
+    t.float "visitors_per_year"
+    t.string "funding"
+    t.string "director"
+    t.float "income"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
