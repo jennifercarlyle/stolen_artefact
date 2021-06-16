@@ -8,6 +8,11 @@
   }
 }
 
+.opening-section {
+  width: 400px;
+  height: 400px;
+}
+
 .collection-map {
   width: 100%;
 }
@@ -27,8 +32,30 @@
     padding-bottom: 12px;
     padding-top: 8px;
   }
+ h3 {
+  font-size: 24px;
+  // font-weight: bold;
+  color: $red;
+  padding-bottom: 12px;
+  padding-top: 8px;
+  font-weight: lighter;
+  }
   p {
-  font-size: 18px;
+  color: $black;
+  padding-bottom: 42px;
+  }
+}
+
+.collection-context {
+  h3 {
+  font-size: 24px;
+  // font-weight: bold;
+  color: $red;
+  padding-bottom: 12px;
+  padding-top: 38px;
+  font-weight: lighter;
+  }
+  p {
   color: $black;
   padding-bottom: 42px;
   }
