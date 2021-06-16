@@ -40,3 +40,31 @@
   //   }
   // }
 }
+
+.museum-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 80vh;
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1587972633381-3862b8268cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80');
+  background-size: 110% 110%;
+  background-position: center center;
+  animation: shrink 12s infinite alternate;
+}
+@keyframes shrink {
+  0% {
+    background-size: 120% 120%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+  // -webkit-animation: zoomin 5s 1;
+  // @-webkit-keyframes zoomin {
+  //   0% {
+  //       -webkit-transform: scale(1);
+  //   }
+  //   100% {
+  //       -webkit-transform: scale(2);
+  //   }
+  // }
+}
