@@ -1,3 +1,4 @@
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -18,11 +19,12 @@
   background-position: center;
   padding: 150px 0;
   height: 80vh;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://dmdlnu87i51n1.cloudfront.net/v1/uk/cjek8k2uy17j70183viykaxuv/0x0:1600x1067/960x960/storage.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://dmdlnu87i51n1.cloudfront.net/v1/uk/cjek8k2uy17j70183viykaxuv/0x0:1600x1067/960x960/storage.jpg');
   background-size: 110% 110%;
   background-position: center center;
-  animation: shrink 12s infinite alternate;
+  animation: shrink 12s infinite;
 }
+
 @keyframes shrink {
   0% {
     background-size: 120% 120%;
@@ -30,15 +32,6 @@
   100% {
     background-size: 100% 100%;
   }
-  // -webkit-animation: zoomin 5s 1;
-  // @-webkit-keyframes zoomin {
-  //   0% {
-  //       -webkit-transform: scale(1);
-  //   }
-  //   100% {
-  //       -webkit-transform: scale(2);
-  //   }
-  // }
 }
 
 .museum-banner {
