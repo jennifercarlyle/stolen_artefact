@@ -78,7 +78,7 @@ const drawLinesFromOrigin = (map, markers) => {
   },
   'paint': {
   'line-color': 'coral',
-  'line-width': 4
+  'line-width': 0
   }
   });
   });
