@@ -19,11 +19,13 @@ url(https://static01.nyt.com/images/2020/01/29/opinion/29Ehikhamenor1/merlin_165
 </div>
 
 <div class="collection-map">
-  <div class="show-map"
+    <div class="show-map"
        id="map"
        style="width: 80%; height: 598px; margin: 0 auto;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="overlay"><button id="replay">Replay</button>
+  </div>
 </div>
 
 <h2 class="collection-renowned-works">Renowned works from <%= @collection.name%></h2>
