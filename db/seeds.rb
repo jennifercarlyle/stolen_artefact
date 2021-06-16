@@ -59,19 +59,49 @@ moai_img = URI.open('https://images.unsplash.com/photo-1600754047212-0cf91397fbc
 amarna_img = URI.open('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/07/07/16/nefertiti.jpg?width=982&height=726&auto=webp&quality=75')
 maqdala_img = URI.open('https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-03/Inscribed_cross_bronze_Ethiopia_British_Museum.jpg?itok=J1wkvDpV')
 
-benin = Collection.new(name: "Benin Bronzes", period: "Medieval", origin_location: "Benin City, Nigeria")
+benin = Collection.new(name: "Benin Bronzes", period: "13th - 19th Century", origin_location: "Benin City, Nigeria", number_of_artefacts: "Estimated to be over 3000", number_of_museums: "161",
+ introduction: "The Benin Bronzes are a group of thousands of objects that were taken from the kingdom of Benin, in what is now Nigeria, in 1897. (Their exact number is unknown, though it is believed to exceed 3,000.)
+ These objects—including figurines, tusks, sculptures of Benin’s rulers, and an ivory mask—were looted by British troops, and have since been dispersed around the world, with the bulk of the works now residing with state museums in Europe.
+ Contrary to the name, not all of the works are made of bronze. Because they made their way beyond West Africa as a result of a colonial conquest, the Benin Bronzes have faced calls for their return, both within Nigeria and outside it.",
+ context: "Institutions on several continents hold objects from the Benin Bronzes group, many of which are considered highly valuable. The British Museum has the most Benin Bronzes of any institution worldwide, with 900 objects from the group in its holdings.
+ Because of the vast number of Benin Bronzes in its collection, the British Museum has repeatedly been the subject of protests from activists, scholars, and artists who claim that the institution owns stolen property.
+ Berlin’s Ethnological Museum—now a part of the newly built Humboldt Forum, which also houses a research laboratory—has also faced pushback because it owns more than 500 objects from the Benin Bronzes cache, as well as other works that various figures have claimed should be repatriated to their former owners.
+Yet these are but two of the many museums around the globe that hold Benin Bronzes. In his 2020 book The Brutish Museums: The Benin Bronzes, Colonial Violence and Cultural Restitution, scholar Dan Hicks compiled a list of the 161 institutions that have acquired Benin Bronzes by various means.
+His list includes the Metropolitan Museum of Art in New York, the Art Institute of Chicago, the Los Angeles County Museum of Art, the Victoria and Albert Museum in London, the Musée du Quai Branly–Jacques Chirac in Paris, the Vatican Museums, the Australian Museum in Sydney, the National Museum of Ethnology in Osaka, and the Louvre Abu Dhabi in the United Arab Emirates.
+Whereas 45 U.K. institutions and 38 U.S. institutions hold Benin Bronzes, just 9 Nigerian ones own objects from the group, according to Hicks’s count. (courtesy: artnews.com)")
 benin.photo.attach(io: benin_img, filename: 'benin.png', content_type: 'image/png')
 benin.save!
-parthenon = Collection.new(name: "The Parthenon Sculptures", period: "5th century B.C.E.", origin_location: "Athens, Greece")
+parthenon = Collection.new(name: "The Parthenon Sculptures", period: "5th century B.C.E.", origin_location: "Athens, Greece", number_of_artefacts: "150 metres of the original frieze remains", number_of_museums: "8",
+introduction: "The Parthenon Sculptures are a collection of different types of marble architectural decoration from the temple of Athena (the Parthenon) on the Acropolis in Athens. Made between 447BC and 432BC they consist of: a frieze which shows the procession of the Panathenaic festival
+(the commemoration of the birthday of the goddess Athena); a series of metopes (sculpted relief panels) depicting the battle between Centaurs and Lapiths at the marriage-feast of Peirithoos; and figures of the gods and legendary heroes from the temple's pediments.
+The British Museum houses 15 metopes, 17 pedimental figures and 247ft (75m) of the original frieze.",
+context: "Today all surviving examples of decoration from the Parthenon are found in museums; there are fragments in Paris, the Vatican, Copenhagen, Munich, Vienna and Würzburg.
+Of the 50 percent of the original sculptures that survive, about half are in the British Museum and half in Athens.Ever since their acquisition by the British nation in 1816, their ownership has been contentious.
+The Parthenon marbles are often called the 'Elgin Marbles', after Thomas Bruce, 7th Earl of Elgin, who had them removed from the Acropolis complex between 1801 and 1812.
+By then, the fifth-century Parthenon was showing its age, having suffered a catastrophic 1687 explosion while it was being used by the Turks as a gunpowder magazine. Years of looting followed.
+In the early nineteenth century, Greece was still part of the Ottoman Empire, and it was from that government that Elgin obtained a firman, or official permission, for taking the marbles.")
 parthenon.photo.attach(io: parthenon_img, filename: 'parthenon.png', content_type: 'image/png')
 parthenon.save!
-moai = Collection.new(name: "Moai", period: "1000 C.E.", origin_location: "Easter Island, Chile")
+moai = Collection.new(name: "Moai", period: "1000 C.E.", origin_location: "Easter Island, Chile", number_of_artefacts: "Close to 1000, with around 900 on Rapa Nui (Easter Island)", number_of_museums: "6",
+  introduction: "Moai statues are massive megaliths at Easter Island, and these are what this island is famous for. The moais were built in approximately 1400 - 1650 A.D. by the natives of this island also known as Rapa Nui. Many know them as the Easter Island heads. This is a misconception from having seen photos of statues in the volcano Rano Raraku partitially covered up with soil. The truth is that all of these 'heads' have full bodies. There are around 1000 statues, up to 86 tons tons in weight and 10 m in height, though average is around half of that.",
+  context: "In 1868, the crew of a British survey ship, HMS Topaze, visited Rapa Nui.The crew was led to the location of Moai Hava at Mataveri, and collected this first moai on 2 November 1868. Soon after, Hoa Hakananai'a was discovered in the house at Orongo by two crew members searching the village. Commodore Richard Powell decided to unearth this second moai, with the intent of bringing them both to Britain. The stone house was dismantled, and Hoa Hakananai'a transported on a sledge to shore. A Rapanui man, known as Tepano, subsequently recalled that the crew, followed by a Rapanui chief, dragged Hoa Hakananai'a down to the beach, before floating it out to the ship on a raft. Later, he had the scene tattooed on his arm.
+    Upon the return of HMS Topaze to England in 1869, Hoa Hakananai'a was offered to Queen Victoria by the Admiralty, which had been made aware of his existence by Commodore Powell. Queen Victoria subsequently donated Hoa Hakananai'a to the British Museum. On 6 October 1869, the arrival of the statue at the Museum was officially reported to the Trustees, marking the beginning of a new chapter in the complex history of Hoa Hakananai'a. With him was also Moai Hava, who was donated directly to the Museum by the Admiralty.")
 moai.photo.attach(io: moai_img, filename: 'moai.png', content_type: 'image/png')
 moai.save!
-amarna = Collection.new(name: "Amarna", period: "1345 B.C.E.", origin_location: "Amarna, Egypt")
+amarna = Collection.new(name: "Amarna", period: "1345 B.C.E.", origin_location: "Amarna, Egypt", number_of_artefacts: "Unknown", number_of_museums: "Unknown",
+introduction: "During a brief seventeen-year reign (ca. 1353–1336 B.C.) the pharaoh Amenhotep IV/Akhenaten, founder of the world's first known monotheistic religion, devoted his life and the resources of his kingdom to the worship of the Aten (a deity symbolized by the sun disk) and thus profoundly affected history and the history of art. The move to a new capital, Akhetaten/Amarna, brought essential changes in the depictions of royal women. It was in their female imagery, above all, that the artists of Amarna departed from the traditional iconic representations to emphasize the individual, the natural, in a way unprecedented in Egyptian art.",
+context: "A picture of exceptional intimacy emerges from the sculptures and reliefs of the Amarna Period. Akhenaten, his wife Nefertiti, and their six daughters are seen in emotional interdependence even as they participate in cult rituals. The female principle is emphasized in astonishing images: the aging Queen Mother Tiye, the mysterious Kiya, and Nefertiti, whose painted limestone bust in Berlin is the best-known work from ancient Egypt—perhaps from all antiquity.
+
+The workshop of the sculptor Thutmose—one of the few artists of the period whose name is known to us—revealed a treasure trove when it was excavated in 1912. An entire creative process is traced through an examination of the work of Thutmose and his assistants, who lived in a highly structured environment. All was left behind when Amarna was abandoned after the death of Akhenaten and the return to religious orthodoxy.")
 amarna.photo.attach(io: amarna_img, filename: 'amarna.png', content_type: 'image/png')
 amarna.save!
-maqdala = Collection.new(name: "Maqdala", period: "1855 - 1868", origin_location: "Amba Mariam, Ethiopia")
+maqdala = Collection.new(name: "Maqdala", period: "1855 - 1868", origin_location: "Amba Mariam, Ethiopia", number_of_artefacts: "Unknown", number_of_museums: "Unknown",
+  introduction: "Maqdala was an almost impenetrable mountain-top fortress in northern Ethiopia which became the seat of power for Emperor Tewodros II. Within its precincts, Tewodros started to establish a library and treasury, as well as dedicating a new church.
+Tewodros had sought to bring the whole of Ethiopia under his control through military campaigns. During these conquests, he collected books, holy relics and manuscripts from churches throughout Ethiopia, and particularly from Gondar, with the intention of establishing Maqdala as a seat of learning and research.
+As a consequence, the treasury at Maqdala housed many of the finest examples of silk textiles, gold and silver regalia and jewellery, weapons, liturgical vessels, processional crosses and tabots.",
+context: "In a storeroom of the British Museum sits a collection of 11 wood and stone tablets that nobody is allowed to see. They are Christian plaques, or tabots, that represent the Ark of the Covenant, and they belong—though belong in this case is a contested term—to the Ethiopian Orthodox Church, which believes only its priests should view them.
+
+The tabots were seized, along with hundreds of other precious items—processional crosses, gold and silver jewelry, illustrated manuscripts—by the British army in 1868, after it defeated Ethiopian Emperor Tewodros II at the battle of Maqdala. There is hardly a clearer case of officially sanctioned plunder: When Tewodros committed suicide, soldiers ransacked his treasury, then auctioned off their finds among their entourage to pay for the expedition. They had even brought along an expert from the British Museum to bid for some of the choicest items. The majority of the artifacts, some of which first passed through the hands of private owners, now sit in the collections of leading U.K. museums and libraries, even though Ethiopia has repeatedly asked for them back over the past century and a half.")
 maqdala.photo.attach(io: maqdala_img, filename: 'maqdala.png', content_type: 'image/png')
 maqdala.save!
 
@@ -183,8 +213,6 @@ event_benin_6.save!
 
 puts "created events for the Benin Plaque"
 
-
-artefact_array = Artefact.all
 puts "creating events for Hoa Hakananai'a"
 event_hoa_1 = Event.new(date: "1000 - 1200 C.E.", description: "No Easter Island statues have been scientifically dated, but statue making in general is said to have begun by at least 1000 C.E., and occurred mostly between 1300 and 1500 C.E. Manufacture is said to have ended by 1600 C.E., when islanders began to topple them.")
 event_hoa_1.photo.attach(io: File.open('app/assets/images/moai.jpeg'), filename: 'moai.jpeg', content_type: 'image/jpeg')
@@ -217,7 +245,32 @@ event_hoa_6.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
 event_hoa_6.save!
 puts "created events for Hoa Hakananai'a"
 
+puts "creating events for Queen Nefertiti"
+event_queen_1 = Event.new(date: "1345 B.C.", description: "The bust of Nefertiti, Queen of the 18th Dynasty of Ancient Egypt, was sculpted by the sculptor Thutmose. Little is known about Nefertiti, the Great Royal Wife of Egyptian Pharaoh Akhenaten, but she is thought to have been the co-regent of Egypt or perhaps even a pharaoh in her own right after the death of her husband.")
+event_queen_1.photo.attach(io: File.open('app/assets/images/nefertiti_1.jpeg'), filename: 'nefertiti_1.jpeg', content_type: 'image/jpeg')
+event_queen_1.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_1.save!
 
+event_queen_2 = Event.new(date: "6 December 1912", description: "The bust of Nefertiti was discovered at Amarna by a German team led by archaeologist Ludwig Borchardt. It was found in what had been the workshop of the sculptor Thutmose, along with other unfinished busts of Nefertiti. Borchardt is accused of illegally smuggling the sculpture out of Egypt in 1913, in breach of conventions on archaeological finds. Borchardt is also suspected of concealing the bust's real value and lying about the materials it was made from to mislead Egypt's chief antiques inspector.")
+event_queen_2.photo.attach(io: File.open('app/assets/images/nefertiti_2.jpeg'), filename: 'nefertiti_2.jpeg', content_type: 'image/jpeg')
+event_queen_2.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_2.save!
+
+event_queen_3 = Event.new(date: "1913 - 1923", description: "The bust was shipped to Berlin and presented to James Simon, a wholesale merchant and the sponsor of the Amarna excavation. It was permanently donated to the Berlin Museum in 1920, but was kept secret from the public from 1913 - 1923 at the request of Borchardt.")
+event_queen_3.photo.attach(io: File.open('app/assets/images/nefertiti_3.jpeg'), filename: 'nefertiti_3.jpeg', content_type: 'image/jpeg')
+event_queen_3.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_3.save!
+
+event_queen_4 = Event.new(date: "1924 - 2009", description: "In 1924, the bust was displayed to the public for the first time as part of the Egyptian Museum of Berlin. The bust created a sensation, swiftly becoming a world-renowned icon of feminine beauty and one of the most universally recognised artifacts to survive from Ancient Egypt. From there it went on to be displayed in many other museums across Germany, except for a period during World War II when it was moved to a secure shelter for safekeeping.")
+event_queen_4.photo.attach(io: File.open('app/assets/images/nefertiti_4.jpeg'), filename: 'nefertiti_4.jpeg', content_type: 'image/jpeg')
+event_queen_4.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_4.save!
+
+event_queen_5 = Event.new(date: "October 2009 - Present", description: "The bust returned to the Neues Museum as its centerpiece when the museum reopened in October 2009. Egypt has attempted since the early 1920s to retrieve the bust from the Germans without success. As recently as September 2020 the Minister of Tourism and Antiquities, Khaled al-Anani, reiterated Cairo's intention to repatriate the bust. In a television appearance, Anani said Germany had rebuffed a request to return the bust to Egypt, but gave him five other antiques for repatriation instead.")
+event_queen_5.photo.attach(io: File.open('app/assets/images/nefertiti_5.jpeg'), filename: 'nefertiti_5.jpeg', content_type: 'image/jpeg')
+event_queen_5.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_5.save!
+puts "created events for Queen Nefertiti"
 
 
 

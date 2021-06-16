@@ -49,18 +49,28 @@
 }
 
 .cards-collection-artefacts {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 8px;
-  padding-bottom: 32px;
-  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .card-like {
+  margin-left: 3px;
+}
+
+.card-icons {
+  display: flex;
   position: absolute;
     top: 5px;
     right: 10px;
+  align-items:center;
+}
+
+.ssb-facebook {
+  margin-left: 3px;
+}
+
+.social-share-button {
+  display: flex;
 }
 
 .cards-general {
