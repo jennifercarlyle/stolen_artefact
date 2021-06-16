@@ -22,7 +22,7 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 // External imports
-import "<%= File.join(Gem.loaded_specs['social-share-button'].full_gem_path, 'app', 'assets', 'javascripts', 'social-share-button.coffee') %>"
+// import "<%= File.join(Gem.loaded_specs['social-share-button'].full_gem_path, 'app', 'assets', 'javascripts', 'social-share-button.coffee') %>"
 import 'mapbox-gl/dist/mapbox-gl.css';
 import "bootstrap";
 
