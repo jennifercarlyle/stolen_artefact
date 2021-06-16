@@ -213,8 +213,6 @@ event_benin_6.save!
 
 puts "created events for the Benin Plaque"
 
-
-artefact_array = Artefact.all
 puts "creating events for Hoa Hakananai'a"
 event_hoa_1 = Event.new(date: "1000 - 1200 C.E.", description: "No Easter Island statues have been scientifically dated, but statue making in general is said to have begun by at least 1000 C.E., and occurred mostly between 1300 and 1500 C.E. Manufacture is said to have ended by 1600 C.E., when islanders began to topple them.")
 event_hoa_1.photo.attach(io: File.open('app/assets/images/moai.jpeg'), filename: 'moai.jpeg', content_type: 'image/jpeg')
@@ -247,7 +245,32 @@ event_hoa_6.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
 event_hoa_6.save!
 puts "created events for Hoa Hakananai'a"
 
+puts "creating events for Queen Nefertiti"
+event_queen_1 = Event.new(date: "1345 B.C.", description: "The bust of Nefertiti, Queen of the 18th Dynasty of Ancient Egypt, was sculpted by the sculptor Thutmose. Little is known about Nefertiti, the Great Royal Wife of Egyptian Pharaoh Akhenaten, but she is thought to have been the co-regent of Egypt or perhaps even a pharaoh in her own right after the death of her husband.")
+event_queen_1.photo.attach(io: File.open('app/assets/images/nefertiti_1.jpeg'), filename: 'nefertiti_1.jpeg', content_type: 'image/jpeg')
+event_queen_1.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_1.save!
 
+event_queen_2 = Event.new(date: "6 December 1912", description: "The bust of Nefertiti was discovered at Amarna by a German team led by archaeologist Ludwig Borchardt. It was found in what had been the workshop of the sculptor Thutmose, along with other unfinished busts of Nefertiti. Borchardt is accused of illegally smuggling the sculpture out of Egypt in 1913, in breach of conventions on archaeological finds. Borchardt is also suspected of concealing the bust's real value and lying about the materials it was made from to mislead Egypt's chief antiques inspector.")
+event_queen_2.photo.attach(io: File.open('app/assets/images/nefertiti_2.jpeg'), filename: 'nefertiti_2.jpeg', content_type: 'image/jpeg')
+event_queen_2.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_2.save!
+
+event_queen_3 = Event.new(date: "1913 - 1923", description: "The bust was shipped to Berlin and presented to James Simon, a wholesale merchant and the sponsor of the Amarna excavation. It was permanently donated to the Berlin Museum in 1920, but was kept secret from the public from 1913 - 1923 at the request of Borchardt.")
+event_queen_3.photo.attach(io: File.open('app/assets/images/nefertiti_3.jpeg'), filename: 'nefertiti_3.jpeg', content_type: 'image/jpeg')
+event_queen_3.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_3.save!
+
+event_queen_4 = Event.new(date: "1924 - 2009", description: "In 1924, the bust was displayed to the public for the first time as part of the Egyptian Museum of Berlin. The bust created a sensation, swiftly becoming a world-renowned icon of feminine beauty and one of the most universally recognised artifacts to survive from Ancient Egypt. From there it went on to be displayed in many other museums across Germany, except for a period during World War II when it was moved to a secure shelter for safekeeping.")
+event_queen_4.photo.attach(io: File.open('app/assets/images/nefertiti_4.jpeg'), filename: 'nefertiti_4.jpeg', content_type: 'image/jpeg')
+event_queen_4.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_4.save!
+
+event_queen_5 = Event.new(date: "October 2009 - Present", description: "The bust returned to the Neues Museum as its centerpiece when the museum reopened in October 2009. Egypt has attempted since the early 1920s to retrieve the bust from the Germans without success. As recently as September 2020 the Minister of Tourism and Antiquities, Khaled al-Anani, reiterated Cairo's intention to repatriate the bust. In a television appearance, Anani said Germany had rebuffed a request to return the bust to Egypt, but gave him five other antiques for repatriation instead.")
+event_queen_5.photo.attach(io: File.open('app/assets/images/nefertiti_5.jpeg'), filename: 'nefertiti_5.jpeg', content_type: 'image/jpeg')
+event_queen_5.artefact_id = artefact_array.find_by(name: "Bust of Queen Nefertiti").id
+event_queen_5.save!
+puts "created events for Queen Nefertiti"
 
 
 
