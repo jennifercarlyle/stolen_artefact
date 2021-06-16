@@ -7,9 +7,8 @@ url(https://static01.nyt.com/images/2020/01/29/opinion/29Ehikhamenor1/merlin_165
   <h1><%= @collection.name %></h1>
 </div>
 
-<div class="opening-section d-flex">
-  <div class="row">
-    <div class="collection-context col-lg-11">
+<div class="opening-section">
+    <div class="collection-introduction">
       <h3>What are they?</h3>
       <p><%= @collection.introduction %></p>
     </div>
@@ -19,7 +18,6 @@ url(https://static01.nyt.com/images/2020/01/29/opinion/29Ehikhamenor1/merlin_165
       <div class="flex-item"><p>Total number of artefacts in this collection worldwide: <%= @collection.number_of_artefacts %></p></div>
       <div class="flex-item"><p>Number of museums who own <%= @collection.name %>: <%= @collection.number_of_museums %></p></div>
     </div>
-  </div>
 </div>
 
 <div class="collection-map">
