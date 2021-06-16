@@ -18,3 +18,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.social-share-button {
+  .ssb-icon {
+    filter: grayscale(100%);
+  }
+  .ssb-icon:hover {
+    filter: grayscale(50%);
+  }
+}
