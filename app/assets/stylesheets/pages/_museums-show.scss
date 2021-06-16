@@ -27,29 +27,11 @@
       }
       .image-container {
         opacity: 1;
+        z-index: 10000000;
       }
     }
   }
 }
-
-// .link-text {
-//   z-index: 2;
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   font-size: 3em;
-//   color: $white;
-//   text-transform: uppercase;
-//   pointer-events: none;
-//   clip-path: circle(75px at var(--x) var(--y));
-//   opacity: 0;
-//   transition: opacity 250ms ease;
-// }
 
 .image-container {
   z-index: -2;
@@ -69,6 +51,25 @@
   width: 150px;
   height: 150px;
 }
+// .link-text {
+//   z-index: 2;
+//   position: absolute;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   font-size: 3em;
+//   color: $white;
+//   text-transform: uppercase;
+//   pointer-events: none;
+//   clip-path: circle(75px at var(--x) var(--y));
+//   opacity: 0;
+//   transition: opacity 250ms ease;
+// }
+
 
 // .link-image {
 //   display: block;

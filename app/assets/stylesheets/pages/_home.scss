@@ -134,8 +134,8 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
   width: 160px;
   background-size: cover;
   background-repeat: no-repeat;
-   -webkit-animation: image-loop-#{$a} 0.5s linear infinite both, image-appear 4.5s linear #{$a/2}s both;
-          animation: image-loop-#{$a} 0.5s linear infinite both, image-appear 4.5s linear #{$a/2}s both;
+   -webkit-animation: image-loop-#{$a} 1s linear infinite both, image-appear 4.5s linear #{$a/2}s both;
+          animation: image-loop-#{$a} 1s linear infinite both, image-appear 4.5s linear #{$a/2}s both;
   }
 }
 

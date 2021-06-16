@@ -27,9 +27,9 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { museums_animation } from '../components/museums_animation';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initSweetalert } from '../plugins/init_sweetalert';
-import { museums_animation } from '../components/museums_animation';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
