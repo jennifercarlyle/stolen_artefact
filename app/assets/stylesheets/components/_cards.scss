@@ -209,14 +209,22 @@
 }
 
 
-.red {
-  color:$red;
-}
+// .red {
+//   color:$red;
+// }
 
-.gray {
-  color: $gray;
-}
+// .gray {
+//   color: $gray;
+// }
 
+.index-header {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
 
 .link-to-text {
   color: $black!important;
