@@ -37,7 +37,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'acts_as_favoritor'
 gem 'cloudinary', '~> 1.16.0'
-gem 'social-share-button'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
