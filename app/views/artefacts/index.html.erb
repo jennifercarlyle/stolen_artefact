@@ -19,7 +19,9 @@
             <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %>
             <%= "Current Location: #{artefact.current_location}" %></p>
             <div class="card-icons">
-              <%= social_share_button_tag("Find out how the #{artefact.name} came to be at the #{artefact.current_location}. #stolenartefact #decolonizemuseums", :url => "https://www.stolenartefact.com#{artefact_path(artefact)}", desc: "Check out this link to learn more about how #{artefact.name} came to be at #{artefact.current_location}.") %>
+              <a class="btn twitter-icon"
+                href="https://twitter.com/intent/tweet?text=Find out how the <%= artefact.name %> came to be at the <%= artefact.current_location %>.&url=<%= artefact_url(artefact, protocol: 'https') %>&hashtags=stolenartefact,decolonizemuseums"
+                target="_blank"><i class="fab fa-twitter"></i></a>
               <% if user_signed_in? %>
                 <% if current_user.favorited?(artefact) %>
                   <div class="card-like"><%= link_to ("<i class='fas fa-heart like-icon red' data-id='#{artefact.id}'></i>").html_safe, toggle_favorite_artefact_path(artefact), remote: true, method: :post %></div>
@@ -74,3 +76,10 @@
     </div>
   <% end %>
 </div>
+
+  <a class="btn"
+    href="https://twitter.com/intent/tweet?text=<%= "Find out how the #{@artefacts.first.name} came to be at the #{@artefacts.first.current_location}." %>&url=https://www.stolenartefact.com&hashtags=stolenartefact,decolonizemuseums"
+    target="_blank"><i class="fab fa-twitter"></i></a>
+
+
+

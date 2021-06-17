@@ -118,7 +118,7 @@
 }
 
 .card-museum > img {
-  height: 200px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
 }
@@ -138,6 +138,14 @@
   margin: 0;
 }
 
+.card-museum h5 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  opacity: .7;
+}
+
 .card-museum .card-museum-infos {
   padding: 16px;
   padding-bottom: 32px;
@@ -146,7 +154,6 @@
   align-items: flex-end;
   position: relative;
 }
-
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
