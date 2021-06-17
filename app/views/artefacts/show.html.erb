@@ -45,9 +45,4 @@
   <div class="view-more mb-4 d-flex justify-content-center">
     <button type="button" class="btn btn-dark rounded btn-outline-dark btn-sm py-3 px-5"><%= link_to "Learn more about the Collection", collection_path(@artefact.collection.id) %></button>
   </div>
-  <!-- <button type="button" class="btn btn-dark px-3 py-2 text-light"><%= link_to "View the Collection", collection_path(@artefact.collection.id) %></button> -->
 </div>
-
-<% content_for :meta_title, "Stolen Artefact - I'm a stolen artefact, get me out of here!" %>
-<% content_for :meta_description, "Discover the true history of some of your favorite museum artefacts. Where did they come from and how did they end up here?" %>
-<% content_for :meta_image, cl_image_path artefact.photo.key %>
