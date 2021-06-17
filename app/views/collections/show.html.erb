@@ -43,8 +43,8 @@ url(https://static01.nyt.com/images/2020/01/29/opinion/29Ehikhamenor1/merlin_165
           <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
           <h2><%= artefact.name %></h2>
           <% end %>
-          <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
-          <p><%= "Current Location: #{artefact.current_location}" %></p>
+          <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %>
+          <%= "Current Location: #{artefact.current_location}" %></p>
           <div class="card-icons">
             <%= social_share_button_tag("Find out how the #{artefact.name} came to be at the #{artefact.current_location}. #stolenartefact #decolonizemuseums", :url => "https://www.stolenartefact.com#{artefact_path(artefact)}", desc: "Check out this link to learn more about how #{artefact.name} came to be at #{artefact.current_location}.") %>
             <% if current_user.favorited?(artefact) %>

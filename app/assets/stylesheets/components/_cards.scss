@@ -31,13 +31,13 @@
 }
 
 .card-artefact h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-artefact p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -110,6 +110,43 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
+.card-museum {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-museum > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-museum h1 {
+  color: $red;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.card-museum p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-museum .card-museum-infos {
+  padding: 16px;
+  padding-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
