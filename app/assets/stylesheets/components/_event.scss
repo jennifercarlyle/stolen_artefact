@@ -1,7 +1,37 @@
-.details {
-  h3 {
+.main-title {
+  h1 {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 60px;
+  }
+}
+.locations {
+  .current-location{
+    border-color: red;
+  }
+  h3 {
+    font-size: 36px;
+    font-style: italic;
+    // font-weight: bolder;
+  }
+  h4 {
+    font-weight: lighter;
+    font-style: italic;
+  }
+}
+
+.details {
+  margin: 0 auto;
+  width: 700px;
+  p {
+    font-size: 18px;
+    font-weight: lighter;
+  }
+  a {
+    font-size: 13px;
+    font-weight: bolder;
+  }
+  :hover {
+    text-decoration: none;
   }
 }
 
@@ -46,7 +76,7 @@ header {
   transform: translateZ(0);
   font-size: 80px;
   font-weight: bold;
-  color: $red;
+  color: blue;
   margin-top: -100px;
   h3 {
     font-size: 60px;
