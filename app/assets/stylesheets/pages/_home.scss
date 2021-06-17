@@ -22,9 +22,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 8px;
   grid-auto-flow: dense;
-  // display: flex;
-  // justify-content: space-between;
-  //flex-wrap: wrap;
 }
 
 .empty {
@@ -278,7 +275,7 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
   }
 }
 
-.about-container {
+.about-section {
   padding-top: 108px;
   margin: auto 0;
 }
@@ -286,7 +283,17 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
 .about {
  font-size: 24px;
  margin: auto 0;
- padding-left: 30%;
- padding-right: 30%;
 }
+
+.stolen,
+.artefact {
+  margin: auto 0;
+  margin: auto 0;
+  font-size: 40px;
+  p {
+    text-align: center;
+  }
+}
+
+
 
