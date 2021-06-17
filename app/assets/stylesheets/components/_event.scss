@@ -87,7 +87,8 @@ header {
 .parallax__group {
   position: relative;
   transform-style: preserve-3d;
-  height: 60vh;
+  height: 90vh;
+  max-height: 700px;
   .btn {
     padding: 3px 5px;
   }
