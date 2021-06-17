@@ -6,14 +6,20 @@
   z-index: 1000;
   top: 0;
   width: 100%;
-}
-
-.navbar-artefact .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-artefact .navbar-brand img {
-  width: 40px;
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+  .navbar-brand img {
+    width: 40px;
+  }
+  .btn {
+    background-color: blue;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 9px 10px;
+    text-transform: uppercase;
+  }
 }
 
 a.nav-link {
@@ -31,7 +37,7 @@ a.nav-link {
   align-items: center;
   margin-right: 24px;
   a {
-  color: white!important;
+    color: white!important;
     font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -39,4 +45,14 @@ a.nav-link {
 }
  .link-to-text-home:hover {
   color: white!important;
+}
+
+.dropdown-item {
+  color: black;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  &:hover {
+    color: blue;
+  }
 }
