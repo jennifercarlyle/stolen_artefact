@@ -1,13 +1,14 @@
 <div class="navbar-artefact"></div>
 
 <div class="home-intro">
-  <div class="home-images">
-    <% 8.times do |index| %>
-      <div class="background-home-image-<%= index +1 %>">
-      </div><div class="empty"></div>
-    <% end %>
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="home-images">
+      <% 8.times do |index| %>
+        <div class="background-home-image-<%= index +1 %>">
+        </div><div class="empty"></div>
+      <% end %>
+    </div>
   </div>
-
   <div class="home-banner">
     <span class="home-title"><% "I'M A STOLEN ARTEFACT/GET ME OUT OF HERE".split("").each_with_index do |letter, i| %>
       <% if letter == "/" %>
