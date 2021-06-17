@@ -6,7 +6,7 @@
 .home-intro {
   background-color: $black;
   width: 100%;
-  height: 598px;
+  height: 100vh;
   margin: 0 auto;
   position: relative;
 }
@@ -244,8 +244,6 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
 }
 
 .arrow-bounce {
-  // -moz-animation: bounce 2s infinite;
-  // -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
 }
 
@@ -259,5 +257,17 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
   60% {
     transform: translateY(-15px);
   }
+}
+
+.about-container {
+  padding-top: 108px;
+  margin: auto 0;
+}
+
+.about {
+ font-size: 24px;
+ margin: auto 0;
+ padding-left: 30%;
+ padding-right: 30%;
 }
 
