@@ -12,11 +12,13 @@
   text-align: center;
 }
 
-.museum-header {
-  color: $red;
+.card-museum-infos {
+  h1 {
+    color: blue;
+  }
   margin-top: 8px;
   margin-bottom: 24px;
-  text-align: center;
+  // text-align: center;
 }
 
 .museum-background {
