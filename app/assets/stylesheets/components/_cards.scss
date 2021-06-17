@@ -156,8 +156,21 @@
 }
 .card-marker {
   background-color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  grid-template-columns: 1fr 1fr;
+  padding: 8px;
+}
+
+.card-marker a {
+  text-decoration: none;
+  color: white;
+}
+
+.card-marker p {
+  font-size: 16px;
+}
+
+.card-marker h2 {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 // Small devices (landscape phones, 576px and up)
