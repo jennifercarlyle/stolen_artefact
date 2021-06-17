@@ -6,7 +6,7 @@
 }
 .locations {
   .current-location{
-    border-color: red;
+    border-color: $coral;
   }
   h3 {
     font-size: 36px;
@@ -19,7 +19,7 @@
   }
 }
 
-.details {
+.artefact-details {
   margin: 0 auto;
   width: 700px;
   p {
@@ -29,9 +29,11 @@
   a {
     font-size: 13px;
     font-weight: bolder;
+    color: $coral;
   }
   :hover {
     text-decoration: none;
+    color: white;
   }
 }
 
@@ -41,7 +43,6 @@ header {
   background-color: $black;
   width: 100%;
   transform-style: inherit;
-  z-index: -1;
 }
 
 .parallax {
@@ -63,6 +64,11 @@ header {
   width: 700px;
   // margin: 0 auto;
   margin-left: 500px;
+  color: white;
+  h2 {
+    font-size: 30px;
+    font-weight: bolder;
+  }
 }
 
 .parallax__layer--image {
@@ -97,13 +103,13 @@ header {
   }
   .btn :hover {
     text-decoration: none;
-    color: black;
+    color: white;
   }
 }
 
 .text-card {
   padding: 50px;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(0,0,0,0.8);
   height: max-content;
   h3 {
     font-size: 50px;
