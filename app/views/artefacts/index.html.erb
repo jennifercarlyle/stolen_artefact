@@ -1,13 +1,13 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1544011431-abf089b738b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
   <div class="container">
-    <h1>Explore Stolen Artefacts</h1>
+    <h1 class="artefact-index">Explore Stolen Artefacts</h1>
   </div>
 </div>
 
 <div class="container">
 
   <% if @collections.count >= 1 %>
-    <h2 class="pt-4 pb-2">Artefacts</h2>
+    <h2 class="d-flex justify-content-center index-header">Artefacts</h2>
     <div class="cards-artefacts" >
       <% @artefacts.first(8).each do |artefact| %>
         <div class="card-artefact">
@@ -41,7 +41,7 @@
   <br>
 
   <% if @collections.count >= 1 %>
-    <h2 class="pt-4 pb-2">Collections</h2>
+    <h2 class="d-flex justify-content-center index-header">Collections</h2>
     <div class="cards-collections">
       <% @collections.first(3).each do |collection| %>
         <div class="card-artefact">
@@ -60,7 +60,7 @@
   <br>
 
   <% if @museums.count >= 1 %>
-    <h2 class="pt-4 pb-2">Museums</h2>
+    <h2 class="d-flex justify-content-center index-header">Museums</h2>
     <div class="cards-museums">
       <% @museums.first(3).each do |museum| %>
         <div class="card-artefact">
@@ -76,10 +76,3 @@
     </div>
   <% end %>
 </div>
-
-  <a class="btn"
-    href="https://twitter.com/intent/tweet?text=<%= "Find out how the #{@artefacts.first.name} came to be at the #{@artefacts.first.current_location}." %>&url=https://www.stolenartefact.com&hashtags=stolenartefact,decolonizemuseums"
-    target="_blank"><i class="fab fa-twitter"></i></a>
-
-
-
