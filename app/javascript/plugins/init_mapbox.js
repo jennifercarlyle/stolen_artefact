@@ -8,15 +8,17 @@ const buildMap = (mapElement) => {
   const map = new mapboxgl.Map({
     container: 'map',
     // style: 'mapbox://styles/mapbox/streets-v10'
-    style: 'mapbox://styles/jamesm122/ckpo67q2x026817n0wia2tz2o'
+    style: 'mapbox://styles/jamesm122/ckpo67q2x026817n0wia2tz2o',
+    renderWorldCopies: false
   });
+      map.scrollZoom.disable();
       return map
 };
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 120, maxZoom: 15, minZoom: 0 });
 };
 
 const initMapbox = () => {
@@ -117,7 +119,7 @@ const animateMultiLines = (map, markerGroup, i) => {
   };
   var lineDistance = turf.length(route.features[0]);
   const arc = [];
-  const steps = 500;
+  const steps = 600;
   for (var i = 0; i < lineDistance; i += lineDistance / steps) {
     var segment = turf.along(route.features[0], i);
     arc.push(segment.geometry.coordinates);
@@ -145,7 +147,7 @@ const animateMultiLines = (map, markerGroup, i) => {
     'source': `${i}route`,
     'type': 'line',
     'paint': {
-    'line-width': 3,
+    'line-width': 4,
     'line-color': 'coral'
     }
     });
@@ -202,7 +204,7 @@ const animateMultiLines = (map, markerGroup, i) => {
     }
 
     counter = counter + 1;
-    if (counter >= 499){
+    if (counter >= 599){
       counter = 0
       reanimate
     }
@@ -211,5 +213,7 @@ const animateMultiLines = (map, markerGroup, i) => {
   animate(animate);
 });
 }
+
+
 
 export { initMapbox };
