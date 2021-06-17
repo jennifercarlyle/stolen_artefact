@@ -1,5 +1,6 @@
 class ArtefactsController < ApplicationController
   before_action :authenticate_user!, only: :toggle_favorite
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @artefacts = []
