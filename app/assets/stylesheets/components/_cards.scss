@@ -118,7 +118,7 @@
 }
 
 .card-museum > img {
-  height: 200px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
 }
@@ -154,7 +154,6 @@
   align-items: flex-end;
   position: relative;
 }
-
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
