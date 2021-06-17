@@ -117,6 +117,11 @@
     grid-template-columns: 1fr;
   }
 }
+.card-marker {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  grid-template-columns: 1fr 1fr;
+}
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
@@ -145,6 +150,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 
 .red {
   color:$red;

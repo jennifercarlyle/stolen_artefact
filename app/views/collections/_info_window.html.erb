@@ -1,4 +1,6 @@
+<div class="card-marker">
 <h2><%= artefact.name %></h2>
 <p><%= 'Current Location'  %></p>
 <p><%= artefact.current_location %></p>
-<button type="button" class="btn btn-outline-light btn-sm mt-2 p-2"><%= link_to "View the Museum" %></button>
+<button type="button" class="btn-outline-dark btn-sm"><%= link_to "View the Museum", museum_path(artefact.museum) %></button>
+</div>
