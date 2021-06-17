@@ -1,43 +1,46 @@
 <div class="banner banner-collection" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
 url(https://static01.nyt.com/images/2020/01/29/opinion/29Ehikhamenor1/merlin_165734295_cd0ed8e7-66c6-4301-ace8-4665ad821374-superJumbo.jpg);">
+  <div class="collection-title text-center text-white">
+    <div class="mb-2 mt-5 main-title">
+      <h1 class="mr-2 mb-2"><%= @collection.name %></h1>
+      <h3>The Collection</h3>
+    </div>
+  </div>
 </div>
 
 
-<div class="collection-title">
-  <h1><%= @collection.name %></h1>
-</div>
 
-<div class="opening-section">
+<div class="opening-section mt-5">
     <div class="collection-introduction">
       <h3>What are they?</h3>
       <p><%= @collection.introduction %></p>
     </div>
     <div class="collection-box">
-      <div class="flex-item"><p>Origin Location: <%= @collection.origin_location %></p></div>
-      <div class="flex-item"><p>Period: <%= @collection.period %></p></div>
-      <div class="flex-item"><p>Total number of artefacts in this collection worldwide: <%= @collection.number_of_artefacts %></p></div>
-      <div class="flex-item"><p>Number of museums who own <%= @collection.name %>: <%= @collection.number_of_museums %></p></div>
+      <div class="flex-item"><h3>Origin Location:</h3><p><%= @collection.origin_location %></p></div>
+      <div class="flex-item"><h3>Period:</h3><p><%= @collection.period %></p></div>
+      <div class="flex-item"><h3>Total number of artefacts in this collection worldwide:</h3><p><%= @collection.number_of_artefacts %></p></div>
+      <div class="flex-item"><h3>Number of museums who own <%= @collection.name %>:</h3><p><%= @collection.number_of_museums %></p></div>
     </div>
 </div>
 
-<div class="collection-map">
+<div class="collection-map mt-5">
     <div class="show-map"
        id="map"
        style="width: 80%; height: 598px; margin: 0 auto;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-<div class="context-container">
-  <div class="collection-context">
+
+<div class="context-container mt-5 d-flex">
+  <div class="collection-context col-7 text-center">
     <h3>Further context</h3>
     <p><%= @collection.context %></p>
   </div>
 </div>
-<h2 class="collection-renowned-works">Renowned works from <%= @collection.name%></h2>
 
 <div class="container">
-  <h2 class="pt-4 pb-2"></h2>
-  <div class="cards-collection-artefacts">
+  <h2 class="collection-renowned-works">Renowned artefacts from <%= @collection.name%></h2>
+  <div class="cards-collection-artefacts mb-5">
     <% @artefacts.first(6).each do |artefact| %>
       <div class="card-artefact">
         <%= cl_image_tag artefact.photo.key %>
@@ -45,8 +48,8 @@ url(https://static01.nyt.com/images/2020/01/29/opinion/29Ehikhamenor1/merlin_165
           <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
           <h2><%= artefact.name %></h2>
           <% end %>
-          <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %>
-          <%= "Current Location: #{artefact.current_location}" %></p>
+          <p><%= "Origin: #{artefact.origin_location}, #{artefact.origin_year}" %></p>
+          <p><%= "Currently: #{artefact.current_location}" %></p>
           <div class="card-icons">
             <a class="btn twitter-icon"
               href="https://twitter.com/intent/tweet?text=Find out how the <%= artefact.name %> came to be at the <%= artefact.current_location %>.&url=<%= artefact_url(artefact, protocol: 'https') %>&hashtags=stolenartefact,decolonizemuseums"

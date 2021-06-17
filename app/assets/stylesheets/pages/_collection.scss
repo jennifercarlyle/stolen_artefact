@@ -3,12 +3,14 @@
   height: 600px;
 }
 .collection-title {
-  text-align: center;
-  color: $red;
-  padding: 32px 0px;
   h1 {
-  font-size: 60px;
-  font-weight: bold;
+    font-weight: bold;
+    font-size: 60px;
+  }
+  h3 {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: lighter;
   }
 }
 
@@ -23,25 +25,37 @@
 
 .collection-introduction {
   flex-grow: 1;
+  width: 70%;
   padding-right: 32px;
   padding-top: 32px;
   h3 {
-  font-size: 24px;
-  color: red;
-  padding-bottom: 12px;
-  padding-top: 8px;
-  font-weight: lighter;
+    padding-bottom: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
   }
   p {
-  color: $black;
-  padding-bottom: 42px;
+    color: blue;
+    font-size: 18px;
+    padding-bottom: 42px;
   }
 }
 
 .collection-box {
-  width: 1120px;
+  width: 30%;
   border-left: 1px solid red;
   padding-left: 32px;
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    // letter-spacing: 0.1em;
+  }
+  p {
+    font-size: 18px;
+    font-weight: lighter;
+    font-style: italic;
+  }
 }
 
 .collection-map {
@@ -52,21 +66,28 @@
   padding-top: 38px;
   margin: 0px 170px;
   padding-right: 16px;
+  // margin: 0 auto;
+  margin: 0 auto;
   h3 {
-    font-size: 24px;
-    color: red;
-    padding-bottom: 12px;
-    padding-top: 8px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
   }
   p {
-    color: $black;
+    color: blue;
+    font-size: 18px;
     padding-bottom: 42px;
   }
 }
 
 .collection-renowned-works {
   padding-top: 80px;
+  padding-bottom: 10px;
   text-align: center;
-  color: red;
-  font-size: 32px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
 }
