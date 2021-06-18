@@ -22,35 +22,52 @@
   align-items: center;
   margin: 8px;
   position: relative;
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  .card-artefact-infos {
+    padding: 16px;
+  }
 }
 
-.card-artefact img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-artefact h2 {
+.card-artefact, .card-museum, .card-collection {
+  h2 {
   font-size: 18px;
   font-weight: bold;
+  // text-transform: uppercase;
   margin: 0;
-}
-
-.card-artefact p {
-  font-size: 16px;
-  line-height: 1.4;
+  }
+  p {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
-}
-
-.card-artefact .card-artefact-infos {
-  padding: 16px;
+  }
 }
 
 .cards-collection-artefacts {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  h2 {
+  font-size: 18px;
+  font-weight: bold;
+  // text-transform: uppercase;
+  margin: 0;
+  }
+  p {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  }
 }
 
 .card-like {
@@ -115,6 +132,42 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  h1 {
+    color: red;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  h5 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    opacity: .7;
+  }
+
+  p {
+    font-size: 16px;
+    opacity: .7;
+    margin: 0;
+  }
+  h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  .card-museum-infos {
+    padding: 16px;
+    padding-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
 }
 
 .card-museum > img {
@@ -123,37 +176,6 @@
   object-fit: cover;
 }
 
-.card-museum h1 {
-  color: $red;
-  text-align: center;
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  width: 100%;
-}
-
-.card-museum p {
-  font-size: 16px;
-  opacity: .7;
-  margin: 0;
-}
-
-.card-museum h5 {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  margin: 0;
-  opacity: .7;
-}
-
-.card-museum .card-museum-infos {
-  padding: 16px;
-  padding-bottom: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -209,14 +231,22 @@
 }
 
 
-.red {
-  color:$red;
-}
+// .red {
+//   color:$red;
+// }
 
-.gray {
-  color: $gray;
-}
+// .gray {
+//   color: $gray;
+// }
 
+.index-header {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
 
 .link-to-text {
   color: $black!important;
@@ -228,10 +258,10 @@
 }
 
 .link-to-text-home {
-   color: $red!important;
+   color: red!important;
   text-decoration: none!important;
   font-weight: bold;
 }
  .link-to-text-home:hover {
-  color: $coral!important;
+  color: $offwhite!important;
 }

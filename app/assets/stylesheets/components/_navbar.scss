@@ -6,36 +6,56 @@
   z-index: 1000;
   top: 0;
   width: 100%;
-}
-
-.navbar-artefact .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-artefact .navbar-brand img {
-  width: 40px;
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+  .navbar-brand img {
+    width: 40px;
+  }
+  .btn {
+    background-color: blue;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 9px 10px;
+    text-transform: uppercase;
+  }
 }
 
 a.nav-link {
-  color: $red !important;
+  color: blue !important;
+  // font-size: 16px;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
+  a {
+    color: blue!important;
+  }
 }
 
 .artefacts-click {
   display: flex;
   align-items: center;
-  margin-right: 16px;
-}
-
-.link-to-text-home {
-  color: $coral!important;
-  text-decoration: none!important;
-  font-weight: bold;
+  margin-right: 24px;
+  a {
+    color: white!important;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
 }
  .link-to-text-home:hover {
-   color: $red!important;
+  color: white!important;
+}
+
+.dropdown-item {
+  color: black;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  &:hover {
+    color: blue;
+  }
 }

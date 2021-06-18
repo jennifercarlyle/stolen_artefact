@@ -22,9 +22,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 8px;
   grid-auto-flow: dense;
-  // display: flex;
-  // justify-content: space-between;
-  //flex-wrap: wrap;
 }
 
 .empty {
@@ -203,24 +200,43 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
 
 .home-title {
   margin-bottom: 40px;
-    h1 {
+  h1 {
+    font-weight: bolder;
     font-size: 100px;
-    font-weight: bold;
   }
 }
 
 .container-home {
   padding: 60px 160px;
   margin-bottom: 20px;
-  h2 {
-    font-size: 24px;
-    color: $red;
+  a {
+    color: $white!important;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
+}
+
+.container-home, .about {
+  h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  p {
+    color: blue;
+  }
+}
+
+.home-header {
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .home-banner {
   background-color: transparent;
-  color: $red;
+  color: white;
   position: absolute;
   top: 0;
   left: 0;
@@ -259,7 +275,7 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
   }
 }
 
-.about-container {
+.about-section {
   padding-top: 108px;
   margin: auto 0;
 }
@@ -267,7 +283,16 @@ $all-images: [$images1, $images2, $images3, $images4, $images5, $images6, $image
 .about {
  font-size: 24px;
  margin: auto 0;
- padding-left: 30%;
- padding-right: 30%;
 }
+
+.stolen,
+.artefact {
+  margin: auto 0;
+  font-size: 40px;
+  p {
+    text-align: center;
+  }
+}
+
+
 
