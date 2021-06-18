@@ -23,6 +23,7 @@ met_img = URI.open('https://images.unsplash.com/photo-1602022761381-fd856825485f
 humboldt_img = URI.open('https://images.unsplash.com/photo-1525286978863-b3201d1894f0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 louvre_img = URI.open('https://images.unsplash.com/photo-1584790867047-592b9f543031?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 pushkin_img = URI.open('https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80')
+otago_museum_img = URI.open('https://www.dunedinnz.com/__data/assets/image/0010/549910/Otago-Museum-exterior.jpg')
 
 british_museum = Museum.new(name: "British Museum", location: "London, UK")
 british_museum.photo.attach(io: british_museum_img, filename: 'british.png', content_type: 'image/png')
@@ -48,6 +49,9 @@ louvre.save!
 pushkin = Museum.new(name: "Pushkin State Museum of Fine Arts", location: "Moscow")
 pushkin.photo.attach(io: pushkin_img, filename: 'pushkin.png', content_type: 'image/png')
 pushkin.save!
+otago_museum = Museum.new(name: "Otago Museum", location: "Otago")
+otago_museum.photo.attach(io: otago_museum_img, filename: 'otago_museum.png', content_type: 'image/png')
+otago_museum.save!
 
 puts "created museums"
 
@@ -115,6 +119,9 @@ benin_bronze_armlet_img = URI.open('https://www.bmimages.com/pix/ET/005/00575708
 benin_bronze_aquamanile_img = URI.open('https://uwehistorycommunity.files.wordpress.com/2021/01/benin-carved-leopards.jpg?w=1024')
 parthenon_statue_img = URI.open('https://i2-prod.mirror.co.uk/incoming/article4751399.ece/ALTERNATES/s1227b/Parthenon-Sculptures-Elgin-Marbles.jpg')
 hoa_img = URI.open('https://news.artnet.com/app/news-upload/2018/12/GettyImages-1071030678-1024x683.jpg')
+moai_head_img = URI.open('https://i1.rgstatic.net/ii/profile.image/809812803743744-1570085826933_Q512/Ross-Mckenzie-8.jpg')
+moai_statue_img = URI.open('https://live.staticflickr.com/7814/47075031161_02e077a36b_b.jpg')
+
 crown_img = URI.open('https://i.guim.co.uk/img/media/43945187e5ff4b9a211d0496069ca9c2bf7d162f/37_0_1125_675/master/1125.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=a0cdd2a8567fc4bc186de9d1df6b54b9')
 queen_img = URI.open('https://www.bigissuenorth.com/wp-content/uploads/2018/01/Nefertiti-bust_bigissuenorth.jpg')
 
@@ -160,6 +167,22 @@ made_by: "Rapanui", material: "basalt, coral, stone",
 registration_num: "Oc1869,1005.1", museum_id: british_museum.id, collection_id: moai.id)
 hoa.photo.attach(io: hoa_img, filename: 'hoa.png', content_type: 'image/png')
 hoa.save!
+
+moai_head = Artefact.new(name: "Moai Head", origin_year:"1000 - 1200",
+origin_location: "Easter Island: Rano Kao", current_location: "Otago Museum, Dunedin",
+context: "Statue which was originally placed on sacred site of Orongo",
+made_by: "Rapanui", material: "Lapilli Tuff",
+registration_num: "E128368-0 ", museum_id: otago_museum.id, collection_id: moai.id)
+moai_head.photo.attach(io: moai_head_img, filename: 'moai_head.png', content_type: 'image/png')
+moai_head.save!
+
+moai_statue = Artefact.new(name: "Moai Statue", origin_year:"1000 - 1200",
+origin_location: "Easter Island: Rano Kao", current_location: "Louvre, Paris",
+context: "Statue which was originally placed on sacred site of Orongo",
+made_by: "Rapanui", material: "Tuff",
+registration_num: "MH.35.61.1", museum_id: louvre.id, collection_id: moai.id)
+moai_statue.photo.attach(io: moai_statue_img, filename: 'moai_statue.png', content_type: 'image/png')
+moai_statue.save!
 
 crown = Artefact.new(name: "Crown", origin_year:"1740",
 origin_location: "Ethiopia", current_location: "Victoria & Albert Museum, London",
@@ -244,6 +267,58 @@ event_hoa_6.photo.attach(io: File.open('app/assets/images/hoa_wellcome.jpeg'), f
 event_hoa_6.artefact_id = artefact_array.find_by(name: "Hoa Hakananai'a").id
 event_hoa_6.save!
 puts "created events for Hoa Hakananai'a"
+
+puts "creating events for Moai Head"
+event_moai_head_1 = Event.new(date: "1000 - 1200 C.E.", description: "No Easter Island statues have been scientifically dated, but statue making in general is said to have begun by at least 1000 C.E., and occurred mostly between 1300 and 1500 C.E. Manufacture is said to have ended by 1600 C.E., when islanders began to topple them.")
+event_moai_head_1.photo.attach(io: File.open('app/assets/images/moai.jpeg'), filename: 'moai.jpeg', content_type: 'image/jpeg')
+event_moai_head_1.artefact_id = artefact_array.find_by(name: "Moai Head").id
+event_moai_head_1.save!
+
+event_moai_head_2 = Event.new(date: "1881", description: "These archaeological pieces, as archives indicate, were carried from Rapa Nui to Tahiti in 1881 by the merchant ship “Nautilus”, together with three crates of “curiosities” destined to Maison Brander in Pape.")
+event_moai_head_2.photo.attach(io: File.open('app/assets/images/Moai_statue_on_boat.jpeg'), filename: 'Moai_statue_on_boat.jpeg', content_type: 'image/jpeg')
+event_moai_head_2.artefact_id = artefact_array.find_by(name: "Moai Head").id
+event_moai_head_2.save!
+
+event_moai_head_3 = Event.new(date: "1928", description: "Brander sold the moai to the Otago Museum, which was attempting to open a new collection made up of cultural material from Oceania.")
+event_moai_head_3.photo.attach(io: File.open('app/assets/images/Moai_statues_in_group.jpeg'), filename: 'Moai_statues_in_group.jpeg', content_type: 'image/jpeg')
+event_moai_head_3.artefact_id = artefact_array.find_by(name: "Moai Head").id
+event_moai_head_3.save!
+
+event_moai_head_4 = Event.new(date: "1930", description: "Aquired by the Otago Museum and shipped from Tahiti to Aotearoa (New Zealand) to be exhibited in a new “Pacific Cultures Gallery” at the Otago Museum which was opened in April of 1930.")
+event_moai_head_4.photo.attach(io: File.open('app/assets/images/Moai_head_inOtago_museum.jpeg'), filename: 'Moai_head_inOtago_museum.jpeg', content_type: 'image/jpeg')
+event_moai_head_4.artefact_id = artefact_array.find_by(name: "Moai Head").id
+event_moai_head_4.save!
+
+puts "created events for Moai Head"
+
+puts "creating events for Moai Statue"
+event_moai_statue_1 = Event.new(date: "1000 - 1200 C.E.", description: "No Easter Island statues have been scientifically dated, but statue making in general is said to have begun by at least 1000 C.E., and occurred mostly between 1300 and 1500 C.E. Manufacture is said to have ended by 1600 C.E., when islanders began to topple them.")
+event_moai_statue_1.photo.attach(io: File.open('app/assets/images/moai.jpeg'), filename: 'moai.jpeg', content_type: 'image/jpeg')
+event_moai_statue_1.artefact_id = artefact_array.find_by(name: "Moai Statue").id
+event_moai_statue_1.save!
+
+event_moai_statue_2 = Event.new(date: "1934", description: "This fragment was taken from Rapa Nui in 1935 by Alfred Métraux and Henri Lavachery, who were the first professional archaeologists to visit Easter Island.")
+event_moai_statue_2.photo.attach(io: File.open('app/assets/images/Moai_statue_on_boat.jpeg'), filename: 'Moai_statue_on_boat.jpeg', content_type: 'image/jpeg')
+event_moai_statue_2.artefact_id = artefact_array.find_by(name: "Moai Statue").id
+event_moai_statue_2.save!
+
+event_moai_statue_3 = Event.new(date: "1935", description: "Presented to the Chilean government by Henri Lavachery and Alfred Metraux for the Musée de l'Homme after their expedition to Rapa Nui")
+event_moai_statue_3.photo.attach(io: File.open('app/assets/images/moai_statues.jpeg'), filename: 'moai_statues.jpeg', content_type: 'image/jpeg')
+event_moai_statue_3.artefact_id = artefact_array.find_by(name: "Moai Statue").id
+event_moai_statue_3.save!
+
+event_moai_statue_4 = Event.new(date: "2018", description: "French President Emanuel Macron pledged to return artefacts that are currently curated in French museums back to their country of origin.")
+event_moai_statue_4.photo.attach(io: File.open('app/assets/images/louvre_museum.jpeg'), filename: 'louvre_museum.jpeg', content_type: 'image/jpeg')
+event_moai_statue_4.artefact_id = artefact_array.find_by(name: "Moai Statue").id
+event_moai_statue_4.save!
+
+event_moai_statue_5 = Event.new(date: "2021", description: "To date France have returned no artefacts.")
+event_moai_statue_5.photo.attach(io: File.open('app/assets/images/moai_in_louvre.jpeg'), filename: 'moai_in_louvre.jpeg', content_type: 'image/jpeg')
+event_moai_statue_5.artefact_id = artefact_array.find_by(name: "Moai Statue").id
+event_moai_statue_5.save!
+
+puts "created events for Moai Statue"
+
 
 puts "creating events for Queen Nefertiti"
 event_queen_1 = Event.new(date: "1345 B.C.", description: "The bust of Nefertiti, Queen of the 18th Dynasty of Ancient Egypt, was sculpted by the sculptor Thutmose. Little is known about Nefertiti, the Great Royal Wife of Egyptian Pharaoh Akhenaten, but she is thought to have been the co-regent of Egypt or perhaps even a pharaoh in her own right after the death of her husband.")
