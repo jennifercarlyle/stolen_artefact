@@ -23,7 +23,7 @@ met_img = URI.open('https://images.unsplash.com/photo-1602022761381-fd856825485f
 humboldt_img = URI.open('https://images.unsplash.com/photo-1525286978863-b3201d1894f0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 louvre_img = URI.open('https://images.unsplash.com/photo-1584790867047-592b9f543031?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 pushkin_img = URI.open('https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80')
-otago_museum_img = URI.open('https://www.dunedinnz.com/__data/assets/image/0010/549910/Otago-Museum-exterior.jpg')
+washington_museum_img = URI.open('https://washington.org/sites/default/files/michellefortephotography_overview-of-museum-of-natural-history-atrium_mydccool-via-crowdriff.jpg')
 
 british_museum = Museum.new(name: "British Museum", location: "London, UK")
 british_museum.photo.attach(io: british_museum_img, filename: 'british.png', content_type: 'image/png')
@@ -49,9 +49,9 @@ louvre.save!
 pushkin = Museum.new(name: "Pushkin State Museum of Fine Arts", location: "Moscow")
 pushkin.photo.attach(io: pushkin_img, filename: 'pushkin.png', content_type: 'image/png')
 pushkin.save!
-otago_museum = Museum.new(name: "Otago Museum", location: "Otago")
-otago_museum.photo.attach(io: otago_museum_img, filename: 'otago_museum.png', content_type: 'image/png')
-otago_museum.save!
+washington_museum = Museum.new(name: "Washington Museum", location: "Washington")
+washington_museum.photo.attach(io: washington_museum_img, filename: 'washington_museum.png', content_type: 'image/png')
+washington_museum.save!
 
 puts "created museums"
 
@@ -120,7 +120,7 @@ benin_bronze_aquamanile_img = URI.open('https://uwehistorycommunity.files.wordpr
 parthenon_statue_img = URI.open('https://i2-prod.mirror.co.uk/incoming/article4751399.ece/ALTERNATES/s1227b/Parthenon-Sculptures-Elgin-Marbles.jpg')
 hoa_img = URI.open('https://news.artnet.com/app/news-upload/2018/12/GettyImages-1071030678-1024x683.jpg')
 moai_head_img = URI.open('https://i1.rgstatic.net/ii/profile.image/809812803743744-1570085826933_Q512/Ross-Mckenzie-8.jpg')
-moai_statue_img = URI.open('https://upload.wikimedia.org/wikipedia/commons/d/da/Moai_Easter_Island_InvMH-35-61-1.jpg')
+moai_statue_img = URI.open('https://live.staticflickr.com/7814/47075031161_02e077a36b_b.jpg')
 
 crown_img = URI.open('https://i.guim.co.uk/img/media/43945187e5ff4b9a211d0496069ca9c2bf7d162f/37_0_1125_675/master/1125.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=a0cdd2a8567fc4bc186de9d1df6b54b9')
 queen_img = URI.open('https://www.bigissuenorth.com/wp-content/uploads/2018/01/Nefertiti-bust_bigissuenorth.jpg')
@@ -169,10 +169,10 @@ hoa.photo.attach(io: hoa_img, filename: 'hoa.png', content_type: 'image/png')
 hoa.save!
 
 moai_head = Artefact.new(name: "Moai Head", origin_year:"1000 - 1200",
-origin_location: "Easter Island: Rano Kao", current_location: "Otago Museum, Dunedin",
+origin_location: "Easter Island: Rano Kao", current_location: "National museum of Natural History, Washington DC",
 context: "Statue which was originally placed on sacred site of Orongo",
 made_by: "Rapanui", material: "Lapilli Tuff",
-registration_num: "E128368-0 ", museum_id: otago_museum.id, collection_id: moai.id)
+registration_num: "E128368-0 ", museum_id: washington_museum.id, collection_id: moai.id)
 moai_head.photo.attach(io: moai_head_img, filename: 'moai_head.png', content_type: 'image/png')
 moai_head.save!
 
@@ -279,12 +279,12 @@ event_moai_head_2.photo.attach(io: File.open('app/assets/images/Moai_statue_on_b
 event_moai_head_2.artefact_id = artefact_array.find_by(name: "Moai Head").id
 event_moai_head_2.save!
 
-event_moai_head_3 = Event.new(date: "1928", description: "Brander sold the moai to the Otago Museum, which was attempting to open a new collection made up of cultural material from Oceania.")
+event_moai_head_3 = Event.new(date: "1928", description: "Brander sold the moai to the Washington Museum, which was attempting to open a new collection made up of cultural material from Oceania.")
 event_moai_head_3.photo.attach(io: File.open('app/assets/images/Moai_statues_in_group.jpeg'), filename: 'Moai_statues_in_group.jpeg', content_type: 'image/jpeg')
 event_moai_head_3.artefact_id = artefact_array.find_by(name: "Moai Head").id
 event_moai_head_3.save!
 
-event_moai_head_4 = Event.new(date: "1930", description: "Aquired by the Otago Museum and shipped from Tahiti to Aotearoa (New Zealand) to be exhibited in a new “Pacific Cultures Gallery” at the Otago Museum which was opened in April of 1930.")
+event_moai_head_4 = Event.new(date: "1930", description: "Aquired by the Washington Museum and shipped from Tahiti to the United States to be exhibited in a new “Pacific Cultures Gallery” at the Washington Museum which was opened in April of 1930.")
 event_moai_head_4.photo.attach(io: File.open('app/assets/images/Moai_head_inOtago_museum.jpeg'), filename: 'Moai_head_inOtago_museum.jpeg', content_type: 'image/jpeg')
 event_moai_head_4.artefact_id = artefact_array.find_by(name: "Moai Head").id
 event_moai_head_4.save!
@@ -313,7 +313,7 @@ event_moai_statue_4.artefact_id = artefact_array.find_by(name: "Moai Statue").id
 event_moai_statue_4.save!
 
 event_moai_statue_5 = Event.new(date: "2021", description: "To date France have returned no artefacts.")
-event_moai_statue_5.photo.attach(io: File.open('app/assets/images/Moai_head_Louvre.jpeg'), filename: 'Moai_head_Louvre.jpeg', content_type: 'image/jpeg')
+event_moai_statue_5.photo.attach(io: File.open('app/assets/images/moai_louvre_2.jpeg'), filename: 'moai_louvre_2.jpeg', content_type: 'image/jpeg')
 event_moai_statue_5.artefact_id = artefact_array.find_by(name: "Moai Statue").id
 event_moai_statue_5.save!
 
