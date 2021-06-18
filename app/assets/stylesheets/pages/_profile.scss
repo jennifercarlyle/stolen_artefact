@@ -1,12 +1,15 @@
 .profile-text {
-  padding-top: 30px;
+  padding-top: 50px;
   h2 {
+    font-size: 24px;
+    font-weight: bolder;
+    // color: blue;
+    padding-bottom: 20px;
+  }
+  h3 {
     font-size: 16px;
-    text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.1em;
-    color: blue;
-  }
-  p {
+    color: black;
   }
 }
