@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
         lat: artefact.latitude,
         lng: artefact.longitude,
         info_window: render_to_string(partial: "info_window", locals: { artefact: artefact }),
-        image_url:  helpers.asset_url('marker_s.png')
+        image_url:  helpers.asset_url('sa-marker_sred3.png')
       }
     end
 
@@ -18,7 +18,7 @@ class CollectionsController < ApplicationController
         lat: @collection.latitude,
         lng: @collection.longitude,
         info_window: render_to_string(partial: "info_window_collection", locals: { collection: @collection }),
-        image_url:  helpers.asset_url('marker_a.png')
+        image_url:  helpers.asset_url('sa-marker_ablue3.png')
       }
     end
 end
