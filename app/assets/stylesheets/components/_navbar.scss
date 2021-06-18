@@ -45,6 +45,10 @@ a.nav-link {
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
+  a:hover {
+    text-decoration: none;
+    color: #d3d3d3!important;
+  }
 }
  .link-to-text-home:hover {
   color: white!important;
