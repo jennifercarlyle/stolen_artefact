@@ -30,6 +30,9 @@ a.nav-link {
 .nav-item {
   display: flex;
   align-items: center;
+  a {
+    color: white!important;
+  }
 }
 
 .artefacts-click {
