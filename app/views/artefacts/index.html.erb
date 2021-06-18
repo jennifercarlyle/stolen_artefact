@@ -16,8 +16,8 @@
            <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
             <h2><%= artefact.name %></h2>
             <% end %>
-            <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %>
-            <%= "Current Location: #{artefact.current_location}" %></p>
+            <p><%= "Origin: #{artefact.origin_location}" %></p>
+            <p><%= "Currently: #{artefact.current_location}" %></p>
             <div class="card-icons">
               <a class="btn twitter-icon"
                 href="https://twitter.com/intent/tweet?text=Find out how the <%= artefact.name %> came to be at the <%= artefact.current_location %>.&url=<%= artefact_url(artefact, protocol: 'https') %>&hashtags=stolenartefact,decolonizemuseums"
@@ -50,7 +50,7 @@
             <%= link_to(collection_path(collection), class: "link-to-text :hover") do %>
             <h2><%= collection.name %></h2>
             <% end %>
-            <p><%= "Period: #{collection.period}" %></p>
+            <p><%= "#{collection.period}" %></p>
           </div>
         </div>
       <% end %>
@@ -69,7 +69,7 @@
             <%= link_to(museum_path(museum), class: "link-to-text :hover") do %>
             <h2><%= museum.name %></h2>
             <% end %>
-            <p><%= "Location: #{museum.location}" %></p>
+            <p><%= "#{museum.location}" %></p>
           </div>
         </div>
       <% end %>
