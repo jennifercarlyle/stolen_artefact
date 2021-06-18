@@ -51,8 +51,8 @@ const addMarkersToMap = (map, markers) => {
   element.style.backgroundPosition = "center";
   // element.style.border = '3px solid coral';
   // element.style.borderRadius = '50%';
-  element.style.width = '65px';
-  element.style.height = '65px';
+  element.style.width = '75px';
+  element.style.height = '75px';
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup) // add this
@@ -166,7 +166,7 @@ const animateMultiLines = (map, markerGroup, i) => {
     // the style in Mapbox Studio and click the "Images" tab.
     // To add a new image to the style at runtime see
     // https://docs.mapbox.com/mapbox-gl-js/example/add-image/
-    'icon-image': 'airfield-15',
+    'icon-image': 'beninMap-2',
     'icon-rotate': ['get', 'bearing'],
     'icon-rotation-alignment': 'map',
     'icon-allow-overlap': true,
