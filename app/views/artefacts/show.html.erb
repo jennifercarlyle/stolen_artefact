@@ -34,7 +34,7 @@
 
   <% @artefact.events.each do |event| %>
     <div class="parallax__group d-flex align-items-center">
-      <div class="parallax__layer parallax__layer--image d-flex ml-6">
+      <div class="parallax__layer parallax__layer--image d-flex ml-2">
         <%= cl_image_tag event.photo.key %>
       </div>
       <div class="parallax__layer parallax__layer--dot d-flex justify-content-center"><h3> • </h3></div>
@@ -45,9 +45,9 @@
         </div>
       </div>
     </div>
-    <div class="h-50"></div>
+    <div class="h-20"></div>
   <% end %>
-  <div class="view-more mb-4 d-flex justify-content-center">
-    <button type="button" class="btn btn-dark rounded btn-outline-dark btn-sm py-3 px-5"><%= link_to "Learn more about the Collection", collection_path(@artefact.collection.id) %></button>
+  <div class="view-more d-flex justify-content-center collection-button">
+    <%= link_to "Learn more about the Collection", collection_path(@artefact.collection.id) %>
   </div>
 </div>
