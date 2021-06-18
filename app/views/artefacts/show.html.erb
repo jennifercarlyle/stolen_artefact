@@ -22,7 +22,7 @@
           <div><h3><%= @artefact.origin_location %></h3></div>
           <div class="current-location ml-2 border-left border-danger px-2"><h4><%= @artefact.current_location %></h4></div>
         </div>
-        <div class="details">
+        <div class="artefact-details">
           <p>
             The <%= @artefact.name %> is currently on display at <%= @artefact.current_location %>. Its provenance can be traced back to <%= @artefact.origin_location %>, <%= @artefact.origin_year %>, made by the <%= @artefact.made_by %> people to <%= @artefact.context %>.
             <%= link_to "View the Collection".upcase, collection_path(@artefact.collection.id) %>
