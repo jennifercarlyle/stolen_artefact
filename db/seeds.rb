@@ -24,28 +24,28 @@ humboldt_img = URI.open('https://images.unsplash.com/photo-1525286978863-b3201d1
 louvre_img = URI.open('https://images.unsplash.com/photo-1584790867047-592b9f543031?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 pushkin_img = URI.open('https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80')
 
-british_museum = Museum.new(name: "British Museum", location: "London, UK")
+british_museum = Museum.new(name: "British Museum", location: "London, UK", founded: 1753, opened: 1759, visitors_per_year: 5.9, income: 4.3, funding: "DCMS", director: "Hartwig Fischer")
 british_museum.photo.attach(io: british_museum_img, filename: 'british.png', content_type: 'image/png')
 british_museum.save!
-pitt_rivers = Museum.new(name: "Pitt Rivers Museum", location: "Oxford, UK")
+pitt_rivers = Museum.new(name: "Pitt Rivers Museum", location: "Oxford, UK", founded: 1884, opened: 1884, visitors_per_year: 0.5, income: 0, funding: "Oxford University, Heritage Lottery", director: "Laura N.K. van Broekhoven")
 pitt_rivers.photo.attach(io: pitt_rivers_img, filename: 'pitt.png', content_type: 'image/png')
 pitt_rivers.save!
-v_a = Museum.new(name: "Victoria & Albert Museum", location: "London, UK")
+v_a = Museum.new(name: "Victoria & Albert Museum", location: "London, UK", founded: 1852, opened: 1852, visitors_per_year: 4.3, income: 1.5, funding: "Arts Council England Lottery", director: "Tristram Hunt")
 v_a.photo.attach(io: v_a_img, filename: 'va.png', content_type: 'image/png')
 v_a.save!
-neues_museum = Museum.new(name: "Neues Museum", location: "Berlin")
+neues_museum = Museum.new(name: "Neues Museum", location: "Berlin", founded: 1843, opened: 1843, visitors_per_year: 0.5, income: 0.8, funding: "Unknown", director: "Eva-Christina Kraus")
 neues_museum.photo.attach(io: neues_img, filename: 'neues.png', content_type: 'image/png')
 neues_museum.save!
-met_museum = Museum.new(name: "Met Museum", location: "New York")
+met_museum = Museum.new(name: "Met Museum", location: "New York", founded: 1870, opened: 1870, visitors_per_year: 6.5, income: 37.5, funding: "US Government Grants", director: "Max Hollein")
 met_museum.photo.attach(io: met_img, filename: 'met.png', content_type: 'image/png')
 met_museum.save!
-humboldt_forum = Museum.new(name: "Humboldt Forum", location: "Berlin")
+humboldt_forum = Museum.new(name: "Humboldt Forum", location: "Berlin", founded: 2020, opened: 2020, director: "Hartmut Dorgerloh")
 humboldt_forum.photo.attach(io: humboldt_img, filename: 'humboldt.png', content_type: 'image/png')
 humboldt_forum.save!
-louvre = Museum.new(name: "Louvre", location: "Paris")
+louvre = Museum.new(name: "Louvre", location: "Paris", founded: 1793, opened: 1793, visitors_per_year: 10.2, director: "Jean-Luc Martinez and Henri Loyrette")
 louvre.photo.attach(io: louvre_img, filename: 'louvre.png', content_type: 'image/png')
 louvre.save!
-pushkin = Museum.new(name: "Pushkin State Museum of Fine Arts", location: "Moscow")
+pushkin = Museum.new(name: "Pushkin State Museum of Fine Arts", location: "Moscow", founded: 1912, opened: 1912, visitors_per_year: 1, funding: "Russian Federation", director: "Marina Loshak")
 pushkin.photo.attach(io: pushkin_img, filename: 'pushkin.png', content_type: 'image/png')
 pushkin.save!
 
