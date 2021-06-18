@@ -11,10 +11,10 @@ url(https://images.unsplash.com/photo-1578163678052-eef169544f75?ixid=MnwxMjA3fD
           <%= cl_image_tag artefact.photo.key %>
           <div class="card-artefact-infos">
             <%= link_to(artefact_path(artefact), class: "link-to-text :hover") do %>
-            <h2><%= artefact.name %></h2>
+            <h3><%= artefact.name %></h3>
             <% end %>
-            <p><%= "Originated: #{artefact.origin_location}, #{artefact.origin_year}" %>
-            <%= "Current Location: #{artefact.current_location}" %></p>
+            <p><%= "Origin: #{artefact.origin_location}, #{artefact.origin_year}" %>
+            <%= "Currently: #{artefact.current_location}" %></p>
             <div class="card-icons">
               <a class="btn twitter-icon"
                 href="https://twitter.com/intent/tweet?text=Find out how the <%= artefact.name %> came to be at the <%= artefact.current_location %>.&url=<%= artefact_url(artefact, protocol: 'https') %>&hashtags=stolenartefact,decolonizemuseums"
