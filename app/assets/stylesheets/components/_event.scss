@@ -134,3 +134,26 @@ header {
     color: $offwhite;
   }
 }
+
+.collection-button {
+  margin-bottom: 200px;
+  font-size: 13px;
+  text-transform: uppercase;
+  // letter-spacing: 0.1em;
+  // font-weight: bold;
+  a {
+  color: blue;
+  padding: 20px 30px;
+  // border-style: solid;
+  border: 1px solid blue;
+  // border-radius: 5px;
+  background-color: white;
+  // font-weight: bolder;
+  }
+  :hover {
+    text-decoration: none;
+    color: white;
+    border: none;
+    background-color: blue;
+  }
+}
